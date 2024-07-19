@@ -14,7 +14,7 @@
 		516859AA2C4A51E300FBB014 /* Sport_ManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859A92C4A51E300FBB014 /* Sport_ManagerUITests.swift */; };
 		516859AC2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859AB2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift */; };
 		516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859BA2C4A551D00FBB014 /* OnboardViewPresenter.swift */; };
-		516859BF2C4A617000FBB014 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859BE2C4A617000FBB014 /* RootView.swift */; };
+		516859C12C4AB5EC00FBB014 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859C02C4AB5EC00FBB014 /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,7 @@
 		516859A92C4A51E300FBB014 /* Sport_ManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport_ManagerUITests.swift; sourceTree = "<group>"; };
 		516859AB2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport_ManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		516859BA2C4A551D00FBB014 /* OnboardViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewPresenter.swift; sourceTree = "<group>"; };
-		516859BE2C4A617000FBB014 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		516859C02C4AB5EC00FBB014 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 			children = (
 				5168598E2C4A51E100FBB014 /* Sport_ManagerApp.swift */,
 				516859BA2C4A551D00FBB014 /* OnboardViewPresenter.swift */,
-				516859BE2C4A617000FBB014 /* RootView.swift */,
+				516859C02C4AB5EC00FBB014 /* RootView.swift */,
 				516859922C4A51E200FBB014 /* Assets.xcassets */,
 				516859942C4A51E200FBB014 /* Preview Content */,
 			);
@@ -262,7 +262,7 @@
 			files = (
 				516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */,
 				5168598F2C4A51E100FBB014 /* Sport_ManagerApp.swift in Sources */,
-				516859BF2C4A617000FBB014 /* RootView.swift in Sources */,
+				516859C12C4AB5EC00FBB014 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
