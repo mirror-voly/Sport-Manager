@@ -9,9 +9,26 @@ import SwiftUI
 
 @main
 struct Sport_ManagerApp: App {
+    @State var isLoading = false
+    
+    func startLoading() {
+        isLoading = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            isLoading = false
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
-            RootView()
+            ZStack(content: {
+                if isLoading {
+                    LoadingView()
+                } else {
+                    RootView()
+                }
+            }).onAppear(perform: {
+                startLoading()
+            })
         }
     }
 }
