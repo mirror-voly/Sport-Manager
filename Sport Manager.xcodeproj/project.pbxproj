@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5168598F2C4A51E100FBB014 /* Sport_ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5168598E2C4A51E100FBB014 /* Sport_ManagerApp.swift */; };
-		516859912C4A51E100FBB014 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859902C4A51E100FBB014 /* ContentView.swift */; };
 		516859932C4A51E200FBB014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 516859922C4A51E200FBB014 /* Assets.xcassets */; };
 		516859962C4A51E200FBB014 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 516859952C4A51E200FBB014 /* Preview Assets.xcassets */; };
 		516859A02C4A51E300FBB014 /* Sport_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5168599F2C4A51E300FBB014 /* Sport_ManagerTests.swift */; };
@@ -38,7 +37,6 @@
 /* Begin PBXFileReference section */
 		5168598B2C4A51E100FBB014 /* Sport Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sport Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5168598E2C4A51E100FBB014 /* Sport_ManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport_ManagerApp.swift; sourceTree = "<group>"; };
-		516859902C4A51E100FBB014 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		516859922C4A51E200FBB014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		516859952C4A51E200FBB014 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5168599B2C4A51E300FBB014 /* Sport ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sport ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				5168598E2C4A51E100FBB014 /* Sport_ManagerApp.swift */,
-				516859902C4A51E100FBB014 /* ContentView.swift */,
 				516859BA2C4A551D00FBB014 /* OnboardViewPresenter.swift */,
 				516859BE2C4A617000FBB014 /* RootView.swift */,
 				516859922C4A51E200FBB014 /* Assets.xcassets */,
@@ -263,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				516859912C4A51E100FBB014 /* ContentView.swift in Sources */,
 				516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */,
 				5168598F2C4A51E100FBB014 /* Sport_ManagerApp.swift in Sources */,
 				516859BF2C4A617000FBB014 /* RootView.swift in Sources */,

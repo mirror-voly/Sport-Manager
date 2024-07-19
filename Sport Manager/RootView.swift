@@ -13,8 +13,6 @@ struct RootView: View {
                 OnboardViewPresenter()
                 .padding(.top, -110)
 
-//                Spacer()
-            Text("ssdfsdf")
                 Button(action: {
                     print("NEXT")
                 }, label: {

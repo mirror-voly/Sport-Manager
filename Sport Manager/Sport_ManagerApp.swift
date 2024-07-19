@@ -11,7 +11,7 @@ import SwiftUI
 struct Sport_ManagerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }
