@@ -9,13 +9,12 @@ import SwiftUI
 
 struct AtriclesView: View {
     
-    var articles: [Article] = []
+    @State var articles: [Article] = []
     
     var body: some View {
         NavigationStack {
             ZStack(content: {
                 Color(.mainBackground)
-                
                 if articles.count == 0 {
                     VStack(spacing: 10, content: {
                         Text("No articles added")
@@ -33,7 +32,7 @@ struct AtriclesView: View {
             .ignoresSafeArea()
             .toolbar(content: {
                 NavigationLink {
-                    NewArticles ()
+                    NewArticles()
                 } label: {
                     Image(systemName: "plus.circle.fill")
                 }

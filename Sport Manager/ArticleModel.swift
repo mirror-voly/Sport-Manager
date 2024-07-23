@@ -13,7 +13,7 @@ struct Article {
         case basketball, football, volleyball, hockey, box, golf, other
     }
     
-    enum Status {
+    enum Status: CaseIterable {
         case sent, published, archived
     }
     
