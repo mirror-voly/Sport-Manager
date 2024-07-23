@@ -12,9 +12,7 @@ struct OnboardViewPresenter: View {
     @State var viewTitle = ""
     @State var viewText = ""
     @State var currentView = 0
-    @Binding var firstStart: Bool
-    
-    let onboarsViews: [OnboardView] = []
+    @Binding var notAFirstStart: Bool
     
 //    init() {
 //        UIPageControl.appearance().currentPageIndicatorTintColor  = UIColor(Color(.onboardColorIndicator))
@@ -57,8 +55,8 @@ struct OnboardViewPresenter: View {
                         if currentView < 2 {
                             currentView += 1
                         } else {
-                            firstStart = false
-                            
+                            UserDefaults.standard.set(true, forKey: "notAFirstStart")
+                            notAFirstStart = true
                         }
                     }, label: {
                         Text("Next")
@@ -96,5 +94,5 @@ struct OnboardView: View, Identifiable {
 
 
 #Preview {
-    OnboardViewPresenter(firstStart: .constant(true))
+    OnboardViewPresenter(notAFirstStart: .constant(true))
 }
