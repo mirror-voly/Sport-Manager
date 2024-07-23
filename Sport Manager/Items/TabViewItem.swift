@@ -22,5 +22,5 @@ struct TabViewItem: View {
 
 
 #Preview {
-    TabViewItem(tabViewImageName: "logo", tabViewText: "No")
+    TabViewItem(tabViewImageName: "doc.fill", tabViewText: "No")
 }

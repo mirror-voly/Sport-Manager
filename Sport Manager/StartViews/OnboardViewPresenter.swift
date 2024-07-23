@@ -12,13 +12,14 @@ struct OnboardViewPresenter: View {
     @State var viewTitle = ""
     @State var viewText = ""
     @State var currentView = 0
+    @Binding var firstStart: Bool
     
     let onboarsViews: [OnboardView] = []
     
-    init() {
-        UIPageControl.appearance().currentPageIndicatorTintColor  = UIColor(Color(.onboardColorIndicator))
-        UIPageControl.appearance().pageIndicatorTintColor  = UIColor(Color(.onboardColorIndicatorSet))
-       }
+//    init() {
+//        UIPageControl.appearance().currentPageIndicatorTintColor  = UIColor(Color(.onboardColorIndicator))
+//        UIPageControl.appearance().pageIndicatorTintColor  = UIColor(Color(.onboardColorIndicatorSet))
+//       }
         
     var body: some View {
         GeometryReader(content: { geometry in
@@ -56,7 +57,8 @@ struct OnboardViewPresenter: View {
                         if currentView < 2 {
                             currentView += 1
                         } else {
-                            print("done")
+                            firstStart = false
+                            
                         }
                     }, label: {
                         Text("Next")
@@ -94,5 +96,5 @@ struct OnboardView: View, Identifiable {
 
 
 #Preview {
-    OnboardViewPresenter()
+    OnboardViewPresenter(firstStart: .constant(true))
 }
