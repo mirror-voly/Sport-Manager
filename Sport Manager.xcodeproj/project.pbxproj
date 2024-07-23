@@ -16,6 +16,8 @@
 		516859AC2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859AB2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift */; };
 		516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859BA2C4A551D00FBB014 /* OnboardViewPresenter.swift */; };
 		516859C12C4AB5EC00FBB014 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859C02C4AB5EC00FBB014 /* RootView.swift */; };
+		5176E8832C4FBE4000940EA7 /* AtriclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176E8822C4FBE4000940EA7 /* AtriclesView.swift */; };
+		5176E8852C4FC06F00940EA7 /* TabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176E8842C4FC06F00940EA7 /* TabViewItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		516859AB2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport_ManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		516859BA2C4A551D00FBB014 /* OnboardViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewPresenter.swift; sourceTree = "<group>"; };
 		516859C02C4AB5EC00FBB014 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		5176E8822C4FBE4000940EA7 /* AtriclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtriclesView.swift; sourceTree = "<group>"; };
+		5176E8842C4FC06F00940EA7 /* TabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +104,10 @@
 			children = (
 				5168598E2C4A51E100FBB014 /* Sport_ManagerApp.swift */,
 				516859C02C4AB5EC00FBB014 /* RootView.swift */,
+				5176E8822C4FBE4000940EA7 /* AtriclesView.swift */,
 				516859BA2C4A551D00FBB014 /* OnboardViewPresenter.swift */,
 				51599A1B2C4AB8E50052EADF /* LoadingView.swift */,
+				5176E8842C4FC06F00940EA7 /* TabViewItem.swift */,
 				516859922C4A51E200FBB014 /* Assets.xcassets */,
 				516859942C4A51E200FBB014 /* Preview Content */,
 			);
@@ -264,8 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */,
+				5176E8832C4FBE4000940EA7 /* AtriclesView.swift in Sources */,
 				51599A1C2C4AB8E50052EADF /* LoadingView.swift in Sources */,
 				5168598F2C4A51E100FBB014 /* Sport_ManagerApp.swift in Sources */,
+				5176E8852C4FC06F00940EA7 /* TabViewItem.swift in Sources */,
 				516859C12C4AB5EC00FBB014 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

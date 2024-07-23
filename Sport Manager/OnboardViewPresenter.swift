@@ -54,7 +54,6 @@ struct OnboardViewPresenter: View {
                 VStack(content: {
                     Button(action: {
                         if currentView < 2 {
-                            print(currentView)
                             currentView += 1
                         } else {
                             print("done")

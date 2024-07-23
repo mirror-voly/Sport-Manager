@@ -12,7 +12,13 @@ struct RootView: View {
     
     
     var body: some View {
-                OnboardViewPresenter()
+        Spacer()
+        TabView(selection: .constant(0),
+                content: {
+            AtriclesView().tabItem { Label("lol", image: .onboardImageTwo) }
+            
+        })
+//                OnboardViewPresenter()
     }
 }
 
