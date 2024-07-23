@@ -30,7 +30,7 @@ struct LoadingView: View {
             }).animation(.smooth(duration: 3),  value: startAnimation)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.loadinViewBackground)
+        .background(Color.mainBackground)
         .onAppear(perform: {
             startAnimation = true
         })

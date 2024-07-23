@@ -18,17 +18,22 @@ struct RootView: View {
                 TabView(selection: .constant(0),
                         content: {
                     AtriclesView().tabItem { TabViewItem(tabViewImageName: "doc.fill", tabViewText: "Articles") }
+                    
                     EventsView().tabItem { TabViewItem(tabViewImageName: "trophy.fill", tabViewText: " Events") }
                     BudgetView().tabItem { TabViewItem(tabViewImageName: "dollarsign.circle.fill", tabViewText: "Budget") }
                     PostsView().tabItem { TabViewItem(tabViewImageName: "doc.richtext.fill", tabViewText: "Posts") }
                     SettingsView().tabItem { TabViewItem(tabViewImageName: "gearshape.fill", tabViewText: "Settings") }
                 })
+                
+                
+                
             } else {
                 OnboardViewPresenter(notAFirstStart: $notAFirstStart)
             }
         }.onAppear(perform: {
             notAFirstStart = UserDefaults.standard.bool(forKey: "notAFirstStart")
         })
+        
         
 //
     }

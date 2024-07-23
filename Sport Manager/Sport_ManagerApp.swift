@@ -25,6 +25,7 @@ struct Sport_ManagerApp: App {
                     LoadingView()
                 } else {
                     RootView()
+                        .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
                 }
             }).onAppear(perform: {
                 startLoading()
