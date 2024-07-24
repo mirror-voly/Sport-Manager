@@ -12,6 +12,7 @@ struct AtriclesView: View {
     @State var articles: [Article] = []
     
     var body: some View {
+        
         NavigationStack {
             ZStack(content: {
                 Color(.mainBackground)
@@ -23,12 +24,36 @@ struct AtriclesView: View {
                             .font(.system(size: 17))
                     })
                 } else {
-                    VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content: {
-                        ForEach(articles) { atricle in
-                            Text(atricle.sportType.rawValue)
-                            Text(atricle.title)
-                        }
-                    })
+                    ScrollView(.vertical) {
+                        VStack(alignment: .leading, spacing: 8, content: {
+                            ForEach(articles) { atricle in
+                                HStack(content: {
+                                    VStack(alignment: .leading, spacing: 4, content: {
+                                        VStack {
+                                            Text(atricle.sportType.rawValue)
+                                                .padding(8)
+                                                .font(.system(size: 11))
+                                        }
+                                        .background(Color.buttonColorActive)
+                                        .clipShape(.rect(cornerRadius: 50))
+                                        Text(atricle.title)
+                                            .font(.system(size: 22))
+                                            .lineLimit(2)
+                                    })
+                                    Spacer()
+                                })
+                                
+                                .frame(maxWidth: .infinity)
+                                .padding(20)
+                                .background(Color.buttonColorActive.opacity(0.15))
+                                .clipShape(.rect(cornerRadius: 30))
+                                
+                            }
+                        })
+                        .padding()
+                    }
+                    .padding(.top, 150)
+                   
                 }
                 
             })
@@ -45,6 +70,14 @@ struct AtriclesView: View {
             
             .navigationTitle("Articles")
         }
+        .onAppear(perform: {
+            articles.append(Article(title: "How Falcons stay on the top after 15 years", sportType: .football, text: "How Falcons stay on the top after 15 years", publisher: "dsfsdf sdfs", status: .sent))
+            articles.append(Article(title: "How Falcons stay on the top after 15 years", sportType: .football, text: "How Falcons stay on the top after 15 years", publisher: "dsfsdf sdfs", status: .sent))
+            articles.append(Article(title: "How Falcons stay on the top after 15 years", sportType: .football, text: "How Falcons stay on the top after 15 years", publisher: "dsfsdf sdfs", status: .sent))
+            articles.append(Article(title: "How Falcons stay on the top after 15 years", sportType: .football, text: "How Falcons stay on the top after 15 years", publisher: "dsfsdf sdfs", status: .sent))
+            articles.append(Article(title: "How Falcons stay on the top after 15 years", sportType: .football, text: "How Falcons stay on the top after 15 years", publisher: "dsfsdf sdfs", status: .sent))
+            
+        })
         
 
     }
