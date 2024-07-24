@@ -17,7 +17,7 @@ struct NewArticles: View {
     @State var correntStatus: Int?
     @State var allSet = false
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) var dismis
     
     private let allSportTypes = Article.SportType.allCases
     private let allStatus = Article.Status.allCases
@@ -162,7 +162,7 @@ struct NewArticles: View {
                 Spacer()
                 Button(action: {
                     articles.append(Article(title: title, sportType: allSportTypes[correntSportType!], text: articleText, publisher: publisher, status: allStatus[correntStatus!]))
-                    presentationMode.wrappedValue.dismiss()
+                    dismis()
                 }, label: {
                             if allSet {
                                 Text("Add")
