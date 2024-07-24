@@ -33,6 +33,8 @@ struct AtriclesView: View {
             .toolbar(content: {
                 NavigationLink {
                     NewArticles()
+                        .navigationTitle("New articles")
+                        .toolbarRole(.editor)
                 } label: {
                     Image(systemName: "plus.circle.fill")
                 }

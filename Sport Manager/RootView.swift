@@ -11,11 +11,6 @@ import SwiftUI
 struct RootView: View {
     
     @State var notAFirstStart: Bool = false
-    init() {
-        for fontname in UIFont.familyNames {
-            print(fontname)
-        }
-    }
     
     var body: some View {
         

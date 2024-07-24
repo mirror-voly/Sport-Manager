@@ -82,6 +82,7 @@ struct NewArticles: View {
                             .font(.custom("SF_Pro", size: 17))
                             .frame(height: 10, alignment: .bottom)
                     })
+                 .tint(Color(UIColor.placeholderText))
                  .padding()
                     Spacer()
                 })
@@ -121,7 +122,7 @@ struct NewArticles: View {
                 )
                 .padding(.top, -10)
                 Spacer()
-            }).font(.system(size: 17))
+            }).font(.custom("SFProText-Regular", size: 17))
         }
     }
 }
