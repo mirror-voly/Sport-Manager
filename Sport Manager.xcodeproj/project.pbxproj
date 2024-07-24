@@ -117,11 +117,11 @@
 			isa = PBXGroup;
 			children = (
 				5168598E2C4A51E100FBB014 /* Sport_ManagerApp.swift */,
+				517732B02C50F833006EB2F0 /* Models */,
 				5173D1742C4FDA49005909B1 /* StartViews */,
 				516859C02C4AB5EC00FBB014 /* RootView.swift */,
 				5173D1752C4FDA6A005909B1 /* TabViews */,
 				514F9E8E2C5005CE006B164A /* NewArticles.swift */,
-				514F9E902C5006FD006B164A /* ArticleModel.swift */,
 				5173D1762C4FDB1D005909B1 /* Coordinator.swift */,
 				5173D1782C4FDB27005909B1 /* Items */,
 				516859922C4A51E200FBB014 /* Assets.xcassets */,
@@ -182,6 +182,14 @@
 				5176E8842C4FC06F00940EA7 /* TabViewItem.swift */,
 			);
 			path = Items;
+			sourceTree = "<group>";
+		};
+		517732B02C50F833006EB2F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				514F9E902C5006FD006B164A /* ArticleModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -13,7 +13,9 @@ struct NewArticles: View {
     @State var title = ""
     @State var articleText = ""
     @State var publisher = ""
-    let allStatus = Article.Status.AllCases()
+    @State var correntSportType: Int?
+    
+    private let allSportTypes = Article.SportType.allCases
     
     var body: some View {
         
@@ -34,15 +36,54 @@ struct NewArticles: View {
                 )
                 .padding(.top, -10)
                 
-                VStack(content: {
-                    
-                    Button(action: {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8, content: {
+                        ForEach(Array(zip(allSportTypes.indices, allSportTypes)), id: \.0) { index, item in
+                            VStack(alignment: .center, content: {
+                                Button {
+                                    correntSportType = index
+                                } label: {
+                                    ZStack(content: {
+                                        if correntSportType != index {
+                                            Color.buttonColorActive.opacity(0.5)
+                                        } else {
+                                            Color.buttonColorActive
+                                        }
+                                        Text(item.rawValue)
+                                            .tint(.white)
+                                            .font(.system(size: 11))
+                                            .lineLimit(1)
+                                            .padding(8)
+                                            .fixedSize()
+
+                                    })
+                                    .frame(height: 21)
+                                    
+                                    
+                                }
+
+                                
+                                    
+                            })
+                            .clipShape(.rect(cornerRadius: 50))
+                            
+                        }
+                    })
+                }
+                
+                .padding(.leading)
+                
+                HStack(content: {
+                 Button(action: {
                         
                     }, label: {
-                        Label("Status", image: .docFill)
+                        Text("Status")
+                        Text("︿")
+                            .font(.custom("SF_Pro", size: 17))
+                            .frame(height: 10, alignment: .bottom)
                     })
-                        
-                            .padding()
+                 .padding()
+                    Spacer()
                 })
                 .frame(height: 62)
                 .padding()
@@ -67,10 +108,11 @@ struct NewArticles: View {
                 .padding(.top, -10)
                 
                 VStack(content: {
-                        TextField("Article text", text: $articleText)
-                            .padding()
+                    TextField("Article text", text: $articleText, axis: .vertical)
+
+                        .padding()
                 })
-                .frame(height: 62)
+                .frame(minHeight: 62)
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
