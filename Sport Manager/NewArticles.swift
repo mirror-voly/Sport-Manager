@@ -14,17 +14,30 @@ struct NewArticles: View {
     @State var articleText = ""
     @State var publisher = ""
     @State var correntSportType: Int?
+    @State var correntStatus: Int?
+    @State var allSet = false
     
     private let allSportTypes = Article.SportType.allCases
+    private let allStatus = Article.Status.allCases
     
+    func isAllFieldsSet() {
+        if !title.isEmpty && !articleText.isEmpty && !publisher.isEmpty && correntSportType != nil {
+            allSet = true
+        } else {
+            allSet = false
+        }
+    }
     var body: some View {
-        
+        GeometryReader(content: { geometry in
         ZStack {
             Color(.mainBackground)
                 .ignoresSafeArea()
             VStack(content: {
                 VStack(content: {
                         TextField("Headline", text: $title)
+                        .onChange(of: title, { _, _ in
+                            isAllFieldsSet()
+                        })
                             .padding()
                 })
                 .frame(height: 62)
@@ -41,7 +54,13 @@ struct NewArticles: View {
                         ForEach(Array(zip(allSportTypes.indices, allSportTypes)), id: \.0) { index, item in
                             VStack(alignment: .center, content: {
                                 Button {
-                                    correntSportType = index
+                                    if correntSportType == index {
+                                        correntSportType = nil
+                                    } else {
+                                        correntSportType = index
+                                    }
+                                    
+                                    isAllFieldsSet()
                                 } label: {
                                     ZStack(content: {
                                         if correntSportType != index {
@@ -55,37 +74,50 @@ struct NewArticles: View {
                                             .lineLimit(1)
                                             .padding(8)
                                             .fixedSize()
-
                                     })
                                     .frame(height: 21)
-                                    
-                                    
                                 }
-
-                                
-                                    
                             })
                             .clipShape(.rect(cornerRadius: 50))
-                            
                         }
                     })
                 }
-                
                 .padding(.leading)
                 
-                HStack(content: {
-                 Button(action: {
-                        
-                    }, label: {
-                        Text("Status")
-                        Text("︿")
-                            .font(.custom("SF_Pro", size: 17))
-                            .frame(height: 10, alignment: .bottom)
-                    })
-                 .tint(Color(UIColor.placeholderText))
-                 .padding()
-                    Spacer()
+                HStack(alignment: .center, content: {
+                    Menu {
+                        ForEach(Array(zip(allStatus.indices, allStatus)), id: \.0) { index, item in
+                            Button(item.rawValue) {
+                                correntStatus = index
+                                isAllFieldsSet()
+                            }
+                        }
+                    } label: {
+                        HStack(content: {
+                            if correntStatus != nil {
+                                HStack(content: {
+                                    Text(allStatus[correntStatus!].rawValue)
+                                    Image(systemName: "triangle")
+                                        .font(.system(size: 10))
+                                        
+                                })
+                                .tint(Color.white)
+                            } else {
+                                HStack(content: {
+                                    Text("Status")
+                                    Image(systemName: "triangle")
+                                        .rotationEffect(Angle(degrees: 180))
+                                        .font(.system(size: 10))
+                                })
+                                .tint(Color(UIColor.placeholderText))
+                            }
+                        })
+                        .padding()
+                        .font(.system(size: 17))
+                    }
+                        Spacer()
                 })
+//
                 .frame(height: 62)
                 .padding()
                 .overlay(
@@ -93,11 +125,13 @@ struct NewArticles: View {
                         .stroke(.white, lineWidth: 1)
                         .padding()
                 )
-                .padding(.top, -10)
                 
                 VStack(content: {
                         TextField("Publisher", text: $publisher)
-                            .padding()
+                        .onChange(of: publisher, { _, _ in
+                            isAllFieldsSet()
+                        })
+                        .padding()
                 })
                 .frame(height: 62)
                 .padding()
@@ -110,7 +144,9 @@ struct NewArticles: View {
                 
                 VStack(content: {
                     TextField("Article text", text: $articleText, axis: .vertical)
-
+                        .onChange(of: articleText, { _, _ in
+                            isAllFieldsSet()
+                        })
                         .padding()
                 })
                 .frame(minHeight: 62)
@@ -122,8 +158,32 @@ struct NewArticles: View {
                 )
                 .padding(.top, -10)
                 Spacer()
-            }).font(.custom("SFProText-Regular", size: 17))
+                Button(action: {
+                            
+                }, label: {
+                            if allSet {
+                                Text("Add")
+                                    .padding(20)
+                                    .frame(maxWidth: .infinity)
+                                    .tint(Color.white)
+                                    .background(Color.buttonColorActive)
+                                    .clipShape(.rect(cornerRadius: 20))
+                            } else {
+                                Text("Add")
+                                    .padding(20)
+                                    .frame(maxWidth: .infinity)
+                                    .tint(Color.white.opacity(0.5))
+                                    .background(Color.buttonColorActive.opacity(0.5))
+                                    .clipShape(.rect(cornerRadius: 20))
+                            }
+                        })
+                        .disabled(!allSet)
+                        .padding()
+                                
+            })
+            .font(.custom("SFProText-Regular", size: 17))
         }
+        })
     }
 }
 
