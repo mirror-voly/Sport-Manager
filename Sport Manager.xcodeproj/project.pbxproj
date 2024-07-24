@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		514F9E8F2C5005CE006B164A /* NewArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F9E8E2C5005CE006B164A /* NewArticles.swift */; };
+		514F9E8F2C5005CE006B164A /* NewArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F9E8E2C5005CE006B164A /* NewArticle.swift */; };
 		514F9E912C5006FD006B164A /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F9E902C5006FD006B164A /* ArticleModel.swift */; };
 		51599A1C2C4AB8E50052EADF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51599A1B2C4AB8E50052EADF /* LoadingView.swift */; };
 		5168598F2C4A51E100FBB014 /* Sport_ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5168598E2C4A51E100FBB014 /* Sport_ManagerApp.swift */; };
@@ -25,6 +25,7 @@
 		5173D1772C4FDB1D005909B1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5173D1762C4FDB1D005909B1 /* Coordinator.swift */; };
 		5176E8832C4FBE4000940EA7 /* AtriclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176E8822C4FBE4000940EA7 /* AtriclesView.swift */; };
 		5176E8852C4FC06F00940EA7 /* TabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176E8842C4FC06F00940EA7 /* TabViewItem.swift */; };
+		51AEEE3A2C5155FB00CD2C96 /* ShowArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AEEE392C5155FB00CD2C96 /* ShowArticleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		514F9E8E2C5005CE006B164A /* NewArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArticles.swift; sourceTree = "<group>"; };
+		514F9E8E2C5005CE006B164A /* NewArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArticle.swift; sourceTree = "<group>"; };
 		514F9E902C5006FD006B164A /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		51599A1B2C4AB8E50052EADF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5168598B2C4A51E100FBB014 /* Sport Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sport Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +68,7 @@
 		5176E8822C4FBE4000940EA7 /* AtriclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtriclesView.swift; sourceTree = "<group>"; };
 		5176E8842C4FC06F00940EA7 /* TabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewItem.swift; sourceTree = "<group>"; };
 		51AEEE362C511F0400CD2C96 /* Sport-Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sport-Manager-Info.plist"; sourceTree = SOURCE_ROOT; };
+		51AEEE392C5155FB00CD2C96 /* ShowArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowArticleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +125,8 @@
 				5173D1742C4FDA49005909B1 /* StartViews */,
 				516859C02C4AB5EC00FBB014 /* RootView.swift */,
 				5173D1752C4FDA6A005909B1 /* TabViews */,
-				514F9E8E2C5005CE006B164A /* NewArticles.swift */,
+				514F9E8E2C5005CE006B164A /* NewArticle.swift */,
+				51AEEE392C5155FB00CD2C96 /* ShowArticleView.swift */,
 				5173D1762C4FDB1D005909B1 /* Coordinator.swift */,
 				5173D1782C4FDB27005909B1 /* Items */,
 				516859922C4A51E200FBB014 /* Assets.xcassets */,
@@ -326,7 +329,8 @@
 			files = (
 				514F9E912C5006FD006B164A /* ArticleModel.swift in Sources */,
 				516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */,
-				514F9E8F2C5005CE006B164A /* NewArticles.swift in Sources */,
+				51AEEE3A2C5155FB00CD2C96 /* ShowArticleView.swift in Sources */,
+				514F9E8F2C5005CE006B164A /* NewArticle.swift in Sources */,
 				5173D16F2C4FDA0A005909B1 /* BudgetView.swift in Sources */,
 				5173D16D2C4FD9F2005909B1 /* EventsView.swift in Sources */,
 				5176E8832C4FBE4000940EA7 /* AtriclesView.swift in Sources */,

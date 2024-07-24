@@ -40,9 +40,16 @@ struct AtriclesView: View {
                                             .font(.system(size: 22))
                                             .lineLimit(2)
                                     })
+                                    
                                     Spacer()
                                 })
-                                
+                                .onTapGesture {
+//                                    NavigationLink {
+//                                        ShowArticleView()
+//                                            .navigationTitle(atricle.title)
+//                                            .toolbarRole(.editor)
+//                                    }
+                                }
                                 .frame(maxWidth: .infinity)
                                 .padding(20)
                                 .background(Color.buttonColorActive.opacity(0.15))
@@ -60,7 +67,7 @@ struct AtriclesView: View {
             .ignoresSafeArea()
             .toolbar(content: {
                 NavigationLink {
-                    NewArticles(articles: $articles)
+                    NewArticle(articles: $articles)
                         .navigationTitle("New articles")
                         .toolbarRole(.editor)
                 } label: {

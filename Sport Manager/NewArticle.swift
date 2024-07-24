@@ -1,5 +1,5 @@
 //
-//  NewArticles.swift
+//  NewArticle.swift
 //  Sport Manager
 //
 //  Created by mix on 23.07.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewArticles: View {
+struct NewArticle: View {
 
     @Binding var articles: [Article]
     @State var title = ""
@@ -191,5 +191,5 @@ struct NewArticles: View {
 }
 
 //#Preview {
-//    NewArticles()
+//    NewArticle()
 //}
