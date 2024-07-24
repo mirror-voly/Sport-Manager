@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Article {
+struct Article: Identifiable {
+    
+    let id = UUID()
     
     enum SportType: CaseIterable {
         case basketball, football, volleyball, hockey, box, golf, other
@@ -44,6 +46,6 @@ struct Article {
     let sportType: SportType
     let text: String
     let publisher: String
-    let when: Date
+//    let when: Date
     let status: Status
 }

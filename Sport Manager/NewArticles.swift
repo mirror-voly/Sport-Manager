@@ -9,13 +9,15 @@ import SwiftUI
 
 struct NewArticles: View {
 
-//    @Binding var articles: [Article]
+    @Binding var articles: [Article]
     @State var title = ""
     @State var articleText = ""
     @State var publisher = ""
     @State var correntSportType: Int?
     @State var correntStatus: Int?
     @State var allSet = false
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     private let allSportTypes = Article.SportType.allCases
     private let allStatus = Article.Status.allCases
@@ -159,7 +161,8 @@ struct NewArticles: View {
                 .padding(.top, -10)
                 Spacer()
                 Button(action: {
-                            
+                    articles.append(Article(title: title, sportType: allSportTypes[correntSportType!], text: articleText, publisher: publisher, status: allStatus[correntStatus!]))
+                    presentationMode.wrappedValue.dismiss()
                 }, label: {
                             if allSet {
                                 Text("Add")
@@ -187,6 +190,6 @@ struct NewArticles: View {
     }
 }
 
-#Preview {
-    NewArticles()
-}
+//#Preview {
+//    NewArticles()
+//}

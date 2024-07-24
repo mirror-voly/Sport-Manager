@@ -24,7 +24,10 @@ struct AtriclesView: View {
                     })
                 } else {
                     VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content: {
-                        /*@START_MENU_TOKEN@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
+                        ForEach(articles) { atricle in
+                            Text(atricle.sportType.rawValue)
+                            Text(atricle.title)
+                        }
                     })
                 }
                 
@@ -32,7 +35,7 @@ struct AtriclesView: View {
             .ignoresSafeArea()
             .toolbar(content: {
                 NavigationLink {
-                    NewArticles()
+                    NewArticles(articles: $articles)
                         .navigationTitle("New articles")
                         .toolbarRole(.editor)
                 } label: {
