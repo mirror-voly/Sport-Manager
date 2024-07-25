@@ -184,7 +184,7 @@ struct NewArticle: View {
                         .padding()
                                 
             })
-            .font(.custom("SFProText-Regular", size: 17))
+            .font(.system(size: 17))
         }
         })
     }
