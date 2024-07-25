@@ -9,15 +9,11 @@ import SwiftUI
 
 struct OnboardViewPresenter: View {
     
+    private let dataManager = DataManager()
     @State var viewTitle = ""
     @State var viewText = ""
     @State var currentView = 0
     @Binding var notAFirstStart: Bool
-    
-//    init() {
-//        UIPageControl.appearance().currentPageIndicatorTintColor  = UIColor(Color(.onboardColorIndicator))
-//        UIPageControl.appearance().pageIndicatorTintColor  = UIColor(Color(.onboardColorIndicatorSet))
-//       }
         
     var body: some View {
         GeometryReader(content: { geometry in
@@ -55,7 +51,7 @@ struct OnboardViewPresenter: View {
                         if currentView < 2 {
                             currentView += 1
                         } else {
-                            UserDefaults.standard.set(true, forKey: "notAFirstStart")
+                            dataManager.saveSettings(first: true)
                             notAFirstStart = true
                         }
                     }, label: {

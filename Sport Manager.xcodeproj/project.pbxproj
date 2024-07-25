@@ -26,6 +26,7 @@
 		5176E8832C4FBE4000940EA7 /* ArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176E8822C4FBE4000940EA7 /* ArticlesView.swift */; };
 		5176E8852C4FC06F00940EA7 /* TabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176E8842C4FC06F00940EA7 /* TabViewItem.swift */; };
 		51AEEE3A2C5155FB00CD2C96 /* ArticleDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AEEE392C5155FB00CD2C96 /* ArticleDescription.swift */; };
+		51BEDADC2C526E4300E8D3D4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BEDADB2C526E4300E8D3D4 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		5176E8842C4FC06F00940EA7 /* TabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewItem.swift; sourceTree = "<group>"; };
 		51AEEE362C511F0400CD2C96 /* Sport-Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sport-Manager-Info.plist"; sourceTree = SOURCE_ROOT; };
 		51AEEE392C5155FB00CD2C96 /* ArticleDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDescription.swift; sourceTree = "<group>"; };
+		51BEDADB2C526E4300E8D3D4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				514F9E8E2C5005CE006B164A /* NewArticle.swift */,
 				51AEEE392C5155FB00CD2C96 /* ArticleDescription.swift */,
 				5173D1762C4FDB1D005909B1 /* Coordinator.swift */,
+				51BEDADB2C526E4300E8D3D4 /* DataManager.swift */,
 				5173D1782C4FDB27005909B1 /* Items */,
 				516859922C4A51E200FBB014 /* Assets.xcassets */,
 				516859942C4A51E200FBB014 /* Preview Content */,
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				514F9E912C5006FD006B164A /* ArticleModel.swift in Sources */,
+				51BEDADC2C526E4300E8D3D4 /* DataManager.swift in Sources */,
 				516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */,
 				51AEEE3A2C5155FB00CD2C96 /* ArticleDescription.swift in Sources */,
 				514F9E8F2C5005CE006B164A /* NewArticle.swift in Sources */,

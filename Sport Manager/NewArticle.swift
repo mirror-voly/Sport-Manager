@@ -17,6 +17,8 @@ struct NewArticle: View {
     @State var correntStatus: Int?
     @State var allSet = false
     
+    let dataManager = DataManager()
+    
     @Environment(\.dismiss) var dismis
     
     private let allSportTypes = Article.SportType.allCases
@@ -29,6 +31,7 @@ struct NewArticle: View {
             allSet = false
         }
     }
+    
     var body: some View {
         GeometryReader(content: { geometry in
         ZStack {
@@ -119,7 +122,7 @@ struct NewArticle: View {
                     }
                         Spacer()
                 })
-//
+                
                 .frame(height: 62)
                 .padding()
                 .overlay(
@@ -161,7 +164,9 @@ struct NewArticle: View {
                 .padding(.top, -10)
                 Spacer()
                 Button(action: {
-                    articles.append(Article(title: title, sportType: allSportTypes[correntSportType!], text: articleText, publisher: publisher, status: allStatus[correntStatus!]))
+                    let newArticle = Article(title: title, sportType: allSportTypes[correntSportType!], text: articleText, publisher: publisher, status: allStatus[correntStatus!])
+                    articles.append(newArticle)
+                    dataManager.saveArticles(articles: articles)
                     dismis()
                 }, label: {
                             if allSet {

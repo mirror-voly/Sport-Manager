@@ -9,27 +9,41 @@ import SwiftUI
 
 @main
 struct Sport_ManagerApp: App {
-    @State var isLoading = false
     
-    func startLoading() {
-        isLoading = true
+    @StateObject private var coordinator = Coordinator()
+    private var dataManager = DataManager()
+    
+    func tryToLoadData() {
+        if let data = dataManager.loadArticles() {
+            coordinator.articles = data
+        }
+        if let settings = dataManager.loadArticles() {
+            coordinator.notAFirstStart = dataManager.loadSettings()
+        }
+        
+    }
+    
+    func startLoadingScreen() {
+        coordinator.isLoading = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            isLoading = false
+            coordinator.isLoading = false
         }
     }
     
     var body: some Scene {
         WindowGroup {
             ZStack(content: {
-                if isLoading {
+                if coordinator.isLoading {
                     LoadingView()
                 } else {
                     RootView()
                         .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
                 }
             }).onAppear(perform: {
-                startLoading()
+                tryToLoadData()
+                startLoadingScreen()
             })
         }
+        .environmentObject(coordinator)
     }
 }

@@ -10,12 +10,12 @@ import SwiftUI
 
 struct RootView: View {
     
-    @State var notAFirstStart: Bool = false
+    @EnvironmentObject private var coordinator: Coordinator
     
     var body: some View {
         
         ZStack {
-            if notAFirstStart == true {
+            if coordinator.notAFirstStart == true {
                 TabView(selection: .constant(0),
                         content: {
                     ArticlesView().tabItem { TabViewItem(tabViewImageName: "doc.fill", tabViewText: "Articles") }
@@ -26,10 +26,10 @@ struct RootView: View {
                     SettingsView().tabItem { TabViewItem(tabViewImageName: "gearshape.fill", tabViewText: "Settings") }
                 })
             } else {
-                OnboardViewPresenter(notAFirstStart: $notAFirstStart)
+                OnboardViewPresenter(notAFirstStart: $coordinator.notAFirstStart)
             }
         }.onAppear(perform: {
-            notAFirstStart = UserDefaults.standard.bool(forKey: "notAFirstStart")
+            coordinator.notAFirstStart = UserDefaults.standard.bool(forKey: "notAFirstStart")
         })
     }
 }

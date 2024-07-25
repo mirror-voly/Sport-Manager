@@ -9,18 +9,16 @@ import SwiftUI
 
 struct ArticlesView: View {
     
-    @State var articles: [Article] = []
+    @EnvironmentObject private var coordinator: Coordinator
     @State var currentArticle: Article? = nil
     
     var body: some View {
         
-        
         NavigationStack {
-            
             ZStack(content: {
                 Color(.mainBackground)
                     .ignoresSafeArea()
-                if articles.count == 0 {
+                if coordinator.articles.count == 0 {
                     VStack(spacing: 10, content: {
                         Text("No articles added")
                             .font(.system(size: 28))
@@ -30,7 +28,7 @@ struct ArticlesView: View {
                 } else {
                     ScrollView(.vertical) {
                         VStack(alignment: .leading, spacing: 8, content: {
-                            ForEach(articles) { article in
+                            ForEach(coordinator.articles) { article in
                                 HStack(content: {
                                     VStack(alignment: .leading, spacing: 4, content: {
                                         VStack {
@@ -44,10 +42,8 @@ struct ArticlesView: View {
                                             .font(.system(size: 22))
                                             .lineLimit(2)
                                     })
-
                                     Spacer()
                                 })
-                                
                                 .onTapGesture {
                                     currentArticle = article
                                 }
@@ -86,21 +82,15 @@ struct ArticlesView: View {
             .navigationTitle("Articles")
             .toolbar(content: {
                 NavigationLink {
-                    NewArticle(articles: $articles)
+                    NewArticle(articles: $coordinator.articles)
                         .navigationTitle("New articles")
                         .toolbarRole(.editor)
                 } label: {
                     Image(systemName: "plus.circle.fill")
                 }
             })
-            
         }
-        .onAppear(perform: {
-            articles.append(Article(title: "How Falcons stay on the top after 12 years", sportType: .football, text: "How Falg lsdfjlg lsjdfgl jsdlfjglsuerhiugh sldhfgklsj hfgkheri gjzzdfjkg", publisher: "Post on Facebook", status: .sent))
-            articles.append(Article(title: "How Falcons stay on the top after 13 years", sportType: .football, text: "How Falcons stay on the top after 13 years", publisher: "dsfsdf sdfs", status: .sent))
-            articles.append(Article(title: "How Falcons stay on the top after 15 years", sportType: .football, text: "How Falcons stay on the top after 15 years", publisher: "dsfsdf sdfs", status: .sent))
-        })
-
+        
     }
 }
 

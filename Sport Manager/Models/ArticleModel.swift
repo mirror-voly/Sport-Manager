@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Article: Identifiable {
+struct Article: Identifiable, Codable {
     
-    let id = UUID()
+    var id = UUID()
     
-    enum SportType: CaseIterable {
+    enum SportType: CaseIterable, Codable {
         case basketball, football, volleyball, hockey, box, golf, other
         
         var rawValue: String {
@@ -27,7 +27,7 @@ struct Article: Identifiable {
             }
     }
     
-    enum Status: CaseIterable  {
+    enum Status: CaseIterable, Codable {
         case writing, sent, published, archived
         
         var rawValue: String {
@@ -46,6 +46,5 @@ struct Article: Identifiable {
     let sportType: SportType
     let text: String
     let publisher: String
-//    let when: Date
     let status: Status
 }
