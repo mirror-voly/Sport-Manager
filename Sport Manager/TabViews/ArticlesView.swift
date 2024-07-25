@@ -44,6 +44,7 @@ struct ArticlesView: View {
                                     })
                                     Spacer()
                                 })
+                                .contentShape(Rectangle())
                                 .onTapGesture {
                                     currentArticle = article
                                 }
@@ -66,8 +67,6 @@ struct ArticlesView: View {
                                             })
                                     }
                                     .tint(Color.white)
-                                    
-                                       
                                 }
                                 .frame(maxWidth: .infinity)
                                 .padding(20)
