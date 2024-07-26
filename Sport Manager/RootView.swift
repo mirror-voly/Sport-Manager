@@ -10,26 +10,43 @@ import SwiftUI
 
 struct RootView: View {
     
+    @StateObject private var coordinator = Coordinator()
+    @State var tabViewIndex = 0
+    private var dataManager = DataManager()
+    
+    func tryToLoadData() {
+        if let data = dataManager.loadArticles() {
+            coordinator.articles = data
+        }
+        if let settings = dataManager.loadSettings() {
+            coordinator.notAFirstStart = settings
+        }
+    }
+    
     init() {
         UITabBar.appearance().backgroundColor = UIColor(.buttonColorActive.opacity(0.2))
        }
     
-    @EnvironmentObject private var coordinator: Coordinator
     
     var body: some View {
+        ZStack(content: {
+            if coordinator.notAFirstStart == true {
+                TabView(selection: $tabViewIndex,
+                        content: {
+                    ArticlesView().tabItem { TabViewItem(tabViewImageName: "doc.fill", tabViewText: "Articles") }
+                    EventsView().tabItem { TabViewItem(tabViewImageName: "trophy.fill", tabViewText: " Events") }
+                    BudgetView().tabItem { TabViewItem(tabViewImageName: "dollarsign.circle.fill", tabViewText: "Budget") }
+                    PostsView().tabItem { TabViewItem(tabViewImageName: "doc.richtext.fill", tabViewText: "Posts") }
+                    SettingsView().tabItem { TabViewItem(tabViewImageName: "gearshape.fill", tabViewText: "Settings") }
+                })
+                .environmentObject(coordinator)
+            } else {
+                OnboardViewPresenter(notAFirstStart: $coordinator.notAFirstStart)
+            }
+        }).onAppear(perform: {
+            tryToLoadData()
+        })
         
-        if coordinator.notAFirstStart == true {
-            TabView(selection: .constant(0),
-                    content: {
-                ArticlesView().tabItem { TabViewItem(tabViewImageName: "doc.fill", tabViewText: "Articles") }
-                EventsView().tabItem { TabViewItem(tabViewImageName: "trophy.fill", tabViewText: " Events") }
-                BudgetView().tabItem { TabViewItem(tabViewImageName: "dollarsign.circle.fill", tabViewText: "Budget") }
-                PostsView().tabItem { TabViewItem(tabViewImageName: "doc.richtext.fill", tabViewText: "Posts") }
-                SettingsView().tabItem { TabViewItem(tabViewImageName: "gearshape.fill", tabViewText: "Settings") }
-            })
-        } else {
-            OnboardViewPresenter(notAFirstStart: $coordinator.notAFirstStart)
-        }
     }
     
 }

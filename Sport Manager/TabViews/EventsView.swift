@@ -13,6 +13,12 @@ struct EventsView: View {
     @State var events: [Event] = []
     @State var currentEvent: Event? = nil
     
+    func removeCurrentEventElement() {
+        if let index = events.firstIndex(of: currentEvent!) {
+            events.remove(at: index)
+        }
+    }
+    
     var body: some View {
         
         NavigationStack {
@@ -75,6 +81,16 @@ struct EventsView: View {
                                                         .fontWeight(.semibold)
                                                 }
                                                 }
+                                                ToolbarItem(placement: .topBarTrailing) {
+                                                    Button {
+                                                        removeCurrentEventElement()
+                                                        currentEvent = nil
+                                                    }
+                                                label: {
+                                                    Image(systemName: "trash")
+                                                        .fontWeight(.semibold)
+                                                }
+                                                }
                                             })
                                     }
                                     .tint(Color.white)
@@ -90,8 +106,8 @@ struct EventsView: View {
                 }
             })
             .onAppear(perform: {
-                events.append(Event(place: "toronto", sportType: .box, subtitle: "lol what?", teamOneName: "Aven", teamTwoName: "Wola", teamOneScore: 5, teamTwoScore: 3, date: "02.03.2024"))
-                events.append(Event(place: "toronto", sportType: .box, subtitle: "lol what?", teamOneName: "Aven", teamTwoName: "Wola", teamOneScore: 5, teamTwoScore: 3, date: "02.03.2024"))
+                events.append(Event(place: "tor5345onto", sportType: .box, subtitle: "lol what?", teamOneName: "Aven11111tt", teamTwoName: "Wola", teamOneScore: 5, teamTwoScore: 3, date: "02.03.2024"))
+                events.append(Event(place: "tor    onto", sportType: .box, subtitle: "lol what?", teamOneName: "Aven66666", teamTwoName: "Wola", teamOneScore: 5, teamTwoScore: 3, date: "02.03.2024"))
             })
             .navigationTitle("Events")
             .toolbar(content: {
