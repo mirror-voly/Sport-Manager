@@ -12,6 +12,8 @@ class Coordinator: ObservableObject {
     
     @Published var notAFirstStart: Bool = false
     @Published var isLoading = false
+    
     @Published var articles: [Article] = []
+    @Published var events: [Event] = []
 }
 

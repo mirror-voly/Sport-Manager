@@ -82,7 +82,7 @@ struct ArticlesView: View {
             .toolbar(content: {
                 NavigationLink {
                     NewArticle(articles: $coordinator.articles)
-                        .navigationTitle("New articles")
+                        .navigationTitle("New article")
                         .toolbarRole(.editor)
                 } label: {
                     Image(systemName: "plus.circle.fill")
