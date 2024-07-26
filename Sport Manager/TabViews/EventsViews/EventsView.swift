@@ -35,14 +35,13 @@ struct EventsView: View {
                 } else {
                     ScrollView(.vertical) {
                         VStack(alignment: .leading, spacing: 8, content: {
-                            ForEach(events) { event in
-                                
+                            ForEach($events) { event in
                                 let teamNames = "\(event.teamOneName) VS \(event.teamTwoName)"
                                 HStack(content: {
                                     VStack(alignment: .leading, spacing: 4, content: {
                                         HStack {
                                             VStack {
-                                                Text(event.date)
+                                                Text(event.date.count)
                                                     .padding(8)
                                                     .font(.system(size: 11))
                                             }
@@ -104,10 +103,6 @@ struct EventsView: View {
                         .padding()
                     }
                 }
-            })
-            .onAppear(perform: {
-                events.append(Event(place: "tor5345onto", sportType: .box, subtitle: "lol what?", teamOneName: "Aven11111tt", teamTwoName: "Wola", teamOneScore: 5, teamTwoScore: 3, date: "02.03.2024"))
-                events.append(Event(place: "tor    onto", sportType: .box, subtitle: "lol what?", teamOneName: "Aven66666", teamTwoName: "Wola", teamOneScore: 5, teamTwoScore: 3, date: "02.03.2024"))
             })
             .navigationTitle("Events")
             .toolbar(content: {

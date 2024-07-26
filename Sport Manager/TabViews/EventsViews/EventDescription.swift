@@ -17,7 +17,7 @@ struct EventDescription: View {
                 .ignoresSafeArea()
             VStack(alignment: .leading, content: {
                     HStack(content: {
-                        Text(event.place)
+                        Text(event.subtitle)
                             .colorMultiply(Color(UIColor.placeholderText))
                             .font(.system(size: 15))
                         Spacer()
@@ -32,7 +32,7 @@ struct EventDescription: View {
                 HStack(alignment: .top, content: {
                     Spacer()
                     VStack(content: {
-                        Text(event.teamOneScore.formatted())
+                        Text(event.teamOneScore)
                             .font(.system(size: 68))
                         Text(event.teamOneName)
                             .font(.system(size: 17))
@@ -42,7 +42,7 @@ struct EventDescription: View {
                         .padding(.horizontal)
                         .padding(.top, -5)
                     VStack(content: {
-                        Text(event.teamTwoScore.formatted())
+                        Text(event.teamTwoScore)
                             .font(.system(size: 68))
                         Text(event.teamTwoName)
                             .font(.system(size: 17))
@@ -64,5 +64,5 @@ struct EventDescription: View {
 
 
 #Preview {
-    EventDescription(event: Event(place: "Toronto", sportType: .box, subtitle: "lol what?", teamOneName: "Aven", teamTwoName: "Wola", teamOneScore: 5, teamTwoScore: 3, date: "02.03.2024"))
+    EventDescription(event: Event(sportType: .box, subtitle: "lol what?", teamOneName: "Aven", teamTwoName: "Wola", teamOneScore: "5", teamTwoScore: "3", date: "02.03.2024"))
 }

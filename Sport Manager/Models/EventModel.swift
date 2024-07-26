@@ -27,15 +27,12 @@ struct Event: Identifiable, Codable, Equatable {
             }
     }
     
-    let place: String
     let sportType: SportType
     let subtitle: String
-    
     let teamOneName: String
     let teamTwoName: String
-    let teamOneScore: Int
-    let teamTwoScore: Int
-    
+    let teamOneScore: String
+    let teamTwoScore: String
     let date: String
     
     
