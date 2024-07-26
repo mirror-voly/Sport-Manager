@@ -17,8 +17,8 @@ struct Sport_ManagerApp: App {
         if let data = dataManager.loadArticles() {
             coordinator.articles = data
         }
-        if let settings = dataManager.loadArticles() {
-            coordinator.notAFirstStart = dataManager.loadSettings()
+        if let settings = dataManager.loadSettings() {
+            coordinator.notAFirstStart = settings
         }
         
     }

@@ -13,7 +13,7 @@ class DataManager {
         UserDefaults.standard.set(first, forKey: "notAFirstStart")
     }
     
-    func loadSettings() -> Bool {
+    func loadSettings() -> Bool? {
         let notAFirstStart = UserDefaults.standard.bool(forKey: "notAFirstStart")
         return notAFirstStart
     }
