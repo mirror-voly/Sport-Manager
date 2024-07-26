@@ -13,14 +13,16 @@ struct TabViewItem: View {
     let tabViewText: String
     
     var body: some View {
-        Image(tabViewImageName).renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-        Text(tabViewText)
-            .font(Font.custom("SFProDisplay-Regular", size: 10))
+        VStack(content: {
+            Image(tabViewImageName).renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+            Text(tabViewText)
+                .font(Font.system(size: 10))
+        })
     }
     
 }
 
 
 #Preview {
-    TabViewItem(tabViewImageName: "doc.fill", tabViewText: "No")
+    TabViewItem(tabViewImageName: "doc.fill", tabViewText: "Note")
 }

@@ -19,8 +19,7 @@ struct Sport_ManagerApp: App {
         }
         if let settings = dataManager.loadSettings() {
             coordinator.notAFirstStart = settings
-        }
-        
+        }    
     }
     
     func startLoadingScreen() {
@@ -37,13 +36,15 @@ struct Sport_ManagerApp: App {
                     LoadingView()
                 } else {
                     RootView()
-                        .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
                 }
-            }).onAppear(perform: {
-                tryToLoadData()
+            })
+            .preferredColorScheme(.dark)
+            .environmentObject(coordinator)
+            .onAppear(perform: {
                 startLoadingScreen()
+                tryToLoadData()
             })
         }
-        .environmentObject(coordinator)
+        
     }
 }
