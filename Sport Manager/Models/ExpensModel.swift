@@ -9,7 +9,7 @@ import Foundation
 
 struct Expens {
     
-    let id = UUID()
+    var id = UUID()
     
     let title: String
     let date: String

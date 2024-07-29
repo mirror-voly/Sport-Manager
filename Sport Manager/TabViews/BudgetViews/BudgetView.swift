@@ -9,7 +9,15 @@ import SwiftUI
 
 struct BudgetView: View {
     
+    
+
+    
     @EnvironmentObject private var coordinator: Coordinator
+    
+    @State var sheetIsOpened = false
+    @State var navigationAddButtonePopUP = false
+//    @State var currentNewPurcheaseState: Coordinator.NewPurchaseState?
+
     
     var body: some View {
         
@@ -17,21 +25,43 @@ struct BudgetView: View {
             ZStack(content: {
                 Color(.mainBackground)
                     .ignoresSafeArea()
-                
             })
-            .navigationTitle("Events")
+            .navigationTitle("Budget")
             .toolbar(content: {
-                NavigationLink {
-                    Menu("sdfa") {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        navigationAddButtonePopUP.toggle()
+                    }, label: {
+                        Image(systemName: "plus.circle.fill")
+                            .fontWeight(.semibold)
+                    })
+                    .popover(isPresented: $navigationAddButtonePopUP, content: {
+                        PopUpView(newPurchaseType: $coordinator.newPurchease, navigationAddButtonePopUP: $navigationAddButtonePopUP)
+                            .presentationCompactAdaptation(.popover)
+                            .onDisappear {
+                                if $coordinator.newPurchease != nil {
+                                    sheetIsOpened = true
+                                }
+                                
+                            }
+                    })
+                    .sheet(isPresented: $sheetIsOpened, onDismiss: {
+                        coordinator.newPurchease = nil
+                    }, content: {
+                        switch coordinator.newPurchease {
+                        case .newIncome: NewIncomeView()
+                        case .newExpence: NewExpenseView()
+                        case .none:
+                            Text("nothing").onAppear {
+                                print(coordinator.newPurchease)
+                            }
+                        }
                         
-                    }
-                    NewEventView(events: $coordinator.incomes)
-                        .navigationTitle("New event")
-                        .toolbarRole(.editor)
-                } label: {
-                    Image(systemName: "plus.circle.fill")
+                    })
+
                 }
             })
+            
         }
         
     }

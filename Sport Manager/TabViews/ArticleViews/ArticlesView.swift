@@ -10,7 +10,7 @@ import SwiftUI
 struct ArticlesView: View {
     
     @EnvironmentObject private var coordinator: Coordinator
-    @State var currentArticle: Article? = nil
+    @State var currentArticle: Article?
     
     var body: some View {
         

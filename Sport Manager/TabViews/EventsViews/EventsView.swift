@@ -10,7 +10,7 @@ import SwiftUI
 struct EventsView: View {
     
     @EnvironmentObject private var coordinator: Coordinator
-    @State var currentEvent: Event? = nil
+    @State var currentEvent: Event?
     
     var body: some View {
         

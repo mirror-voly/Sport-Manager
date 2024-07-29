@@ -9,7 +9,7 @@ import Foundation
 
 struct Income {
     
-    let id = UUID()
+    var id = UUID()
     
     let title: String
     let date: String
