@@ -18,8 +18,9 @@
 		516859AC2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859AB2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift */; };
 		516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859BA2C4A551D00FBB014 /* OnboardViewPresenter.swift */; };
 		516859C12C4AB5EC00FBB014 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859C02C4AB5EC00FBB014 /* RootView.swift */; };
+		5171E3732C5775FC00415FA6 /* AllEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E3722C5775FC00415FA6 /* AllEventsView.swift */; };
 		517246FE2C539B8D008EF4F6 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517246FD2C539B8D008EF4F6 /* EventModel.swift */; };
-		517247002C539CA9008EF4F6 /* NewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517246FF2C539CA9008EF4F6 /* NewEvent.swift */; };
+		517247002C539CA9008EF4F6 /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517246FF2C539CA9008EF4F6 /* NewEventView.swift */; };
 		517247022C539D3B008EF4F6 /* EventDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517247012C539D3B008EF4F6 /* EventDescription.swift */; };
 		5173D16D2C4FD9F2005909B1 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5173D16C2C4FD9F2005909B1 /* EventsView.swift */; };
 		5173D16F2C4FDA0A005909B1 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5173D16E2C4FDA0A005909B1 /* BudgetView.swift */; };
@@ -64,8 +65,9 @@
 		516859AB2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport_ManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		516859BA2C4A551D00FBB014 /* OnboardViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewPresenter.swift; sourceTree = "<group>"; };
 		516859C02C4AB5EC00FBB014 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		5171E3722C5775FC00415FA6 /* AllEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsView.swift; sourceTree = "<group>"; };
 		517246FD2C539B8D008EF4F6 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
-		517246FF2C539CA9008EF4F6 /* NewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEvent.swift; sourceTree = "<group>"; };
+		517246FF2C539CA9008EF4F6 /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 		517247012C539D3B008EF4F6 /* EventDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDescription.swift; sourceTree = "<group>"; };
 		5173D16C2C4FD9F2005909B1 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		5173D16E2C4FDA0A005909B1 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
@@ -118,7 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				5173D16C2C4FD9F2005909B1 /* EventsView.swift */,
-				517246FF2C539CA9008EF4F6 /* NewEvent.swift */,
+				5171E3722C5775FC00415FA6 /* AllEventsView.swift */,
+				517246FF2C539CA9008EF4F6 /* NewEventView.swift */,
 				517247012C539D3B008EF4F6 /* EventDescription.swift */,
 			);
 			path = EventsViews;
@@ -361,6 +364,7 @@
 				51AEEE3A2C5155FB00CD2C96 /* ArticleDescription.swift in Sources */,
 				514F9E8F2C5005CE006B164A /* NewArticle.swift in Sources */,
 				5173D16F2C4FDA0A005909B1 /* BudgetView.swift in Sources */,
+				5171E3732C5775FC00415FA6 /* AllEventsView.swift in Sources */,
 				5173D16D2C4FD9F2005909B1 /* EventsView.swift in Sources */,
 				5176E8832C4FBE4000940EA7 /* ArticlesView.swift in Sources */,
 				51599A1C2C4AB8E50052EADF /* LoadingView.swift in Sources */,
@@ -368,7 +372,7 @@
 				5173D1772C4FDB1D005909B1 /* Coordinator.swift in Sources */,
 				5168598F2C4A51E100FBB014 /* Sport_ManagerApp.swift in Sources */,
 				5176E8852C4FC06F00940EA7 /* TabViewItem.swift in Sources */,
-				517247002C539CA9008EF4F6 /* NewEvent.swift in Sources */,
+				517247002C539CA9008EF4F6 /* NewEventView.swift in Sources */,
 				516859C12C4AB5EC00FBB014 /* RootView.swift in Sources */,
 				517246FE2C539B8D008EF4F6 /* EventModel.swift in Sources */,
 				5173D1712C4FDA1B005909B1 /* PostsView.swift in Sources */,

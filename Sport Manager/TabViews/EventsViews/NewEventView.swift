@@ -1,5 +1,5 @@
 //
-//  NewEvent.swift
+//  NewEventView.swift
 //  Sport Manager
 //
 //  Created by mix on 26.07.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewEvent: View {
+struct NewEventView: View {
 
     @Binding var events: [Event]
     @State var correntSportType: Int?
@@ -20,7 +20,7 @@ struct NewEvent: View {
     @State var date = ""
     private let allSportTypes = Event.SportType.allCases
  
-//    let dataManager = DataManager()
+    private let dataManager = DataManager()
     @Environment(\.dismiss) var dismis
       
     func isAllFieldsSet() {
@@ -31,6 +31,12 @@ struct NewEvent: View {
         }
     }
     
+    private func save() {
+        let newEvent = Event(sportType: allSportTypes[correntSportType!], subtitle: subtitle, teamOneName: teamOneName, teamTwoName: teamTwoName, teamOneScore: teamOneScore, teamTwoScore: teamTwoScore, date: date)
+        events.append(newEvent)
+        dataManager.saveEvents(events: events)
+    }
+    
     var body: some View {
         ZStack {
             Color(.mainBackground)
@@ -39,7 +45,7 @@ struct NewEvent: View {
                 HStack(spacing: -20, content: {
                     VStack(content: {
                             TextField("Team 01", text: $teamOneName)
-                            .tint(.mainPlaseholder)
+                            .tint(.mainPlaceholder)
                             .onChange(of: teamOneName, { _, _ in
                                 isAllFieldsSet()
                             })
@@ -49,14 +55,14 @@ struct NewEvent: View {
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
-                            .stroke(.mainPlaseholder, lineWidth: 1)
+                            .stroke(.mainPlaceholder, lineWidth: 1)
                             .padding()
                     )
                     
                     
                     VStack(content: {
                             TextField("Team score", text: $teamOneScore)
-                            .tint(.mainPlaseholder)
+                            .tint(.mainPlaceholder)
                             .onChange(of: teamOneScore, { _, _ in
                                 isAllFieldsSet()
                             })
@@ -66,7 +72,7 @@ struct NewEvent: View {
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
-                            .stroke(.mainPlaseholder, lineWidth: 1)
+                            .stroke(.mainPlaceholder, lineWidth: 1)
                             .padding()
                     )
                 })
@@ -74,7 +80,7 @@ struct NewEvent: View {
                 HStack(spacing: -20, content: {
                     VStack(content: {
                             TextField("Team 02", text: $teamTwoName)
-                            .tint(.mainPlaseholder)
+                            .tint(.mainPlaceholder)
                             .onChange(of: teamTwoName, { _, _ in
                                 isAllFieldsSet()
                             })
@@ -84,13 +90,13 @@ struct NewEvent: View {
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
-                            .stroke(.mainPlaseholder, lineWidth: 1)
+                            .stroke(.mainPlaceholder, lineWidth: 1)
                             .padding()
                     )
                     
                     VStack(content: {
                             TextField("Team score", text: $teamTwoScore)
-                            .tint(.mainPlaseholder)
+                            .tint(.mainPlaceholder)
                             .onChange(of: teamTwoScore, { _, _ in
                                 isAllFieldsSet()
                             })
@@ -100,7 +106,7 @@ struct NewEvent: View {
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
-                            .stroke(.mainPlaseholder, lineWidth: 1)
+                            .stroke(.mainPlaceholder, lineWidth: 1)
                             .padding()
                     )
                 })
@@ -151,7 +157,7 @@ struct NewEvent: View {
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
-                        .stroke(.mainPlaseholder, lineWidth: 1)
+                        .stroke(.mainPlaceholder, lineWidth: 1)
                         .padding()
                 )
                 
@@ -166,14 +172,12 @@ struct NewEvent: View {
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
-                        .stroke(.mainPlaseholder, lineWidth: 1)
+                        .stroke(.mainPlaceholder, lineWidth: 1)
                         .padding()
                 )
                 Spacer()
                 Button(action: {
-                    let newEvent = Event(sportType: allSportTypes[correntSportType!], subtitle: subtitle, teamOneName: teamOneName, teamTwoName: teamTwoName, teamOneScore: teamOneScore, teamTwoScore: teamTwoScore, date: date)
-                    events.append(newEvent)
-//                    dataManager.saveArticles(articles: articles)
+                    save()
                     dismis()
                 }, label: {
                             if allSet {
@@ -202,5 +206,5 @@ struct NewEvent: View {
 }
 
 //#Preview {
-//    NewEvent(events: .constant([Event(sportType: .basketball, subtitle: "", teamOneName: "", teamTwoName: "", teamOneScore: "3", teamTwoScore: "3", date: "")]))
+//    NewEventView(events: .constant([Event(sportType: .basketball, subtitle: "", teamOneName: "", teamTwoName: "", teamOneScore: "3", teamTwoScore: "3", date: "")]))
 //}

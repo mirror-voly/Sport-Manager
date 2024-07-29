@@ -49,10 +49,7 @@ struct EventDescription: View {
                     })
                     Spacer()
                 })
-                
-                Text(event.subtitle)
-                    .font(.system(size: 17))
-                    .padding(.top)
+
                 Spacer()
             })
             .padding()

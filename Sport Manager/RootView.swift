@@ -15,11 +15,15 @@ struct RootView: View {
     private var dataManager = DataManager()
     
     func tryToLoadData() {
-        if let data = dataManager.loadArticles() {
-            coordinator.articles = data
+        if let articles = dataManager.loadArticles() {
+            coordinator.articles = articles
         }
         if let settings = dataManager.loadSettings() {
             coordinator.notAFirstStart = settings
+        }
+        
+        if let events = dataManager.loadEvents() {
+            coordinator.events = events
         }
     }
     
