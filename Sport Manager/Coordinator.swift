@@ -14,5 +14,7 @@ class Coordinator: ObservableObject {
     
     @Published var articles: [Article] = []
     @Published var events: [Event] = []
+    @Published var incomes: [Income] = []
+    @Published var expenses: [Expens] = []
 }
 

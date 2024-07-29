@@ -1,5 +1,5 @@
 //
-//  EventsView.swift
+//  BudgetView.swift
 //  Sport Manager
 //
 //  Created by mix on 23.07.2024.
@@ -7,10 +7,9 @@
 
 import SwiftUI
 
-struct EventsView: View {
+struct BudgetView: View {
     
     @EnvironmentObject private var coordinator: Coordinator
-    @State var currentEvent: Event? = nil
     
     var body: some View {
         
@@ -18,16 +17,15 @@ struct EventsView: View {
             ZStack(content: {
                 Color(.mainBackground)
                     .ignoresSafeArea()
-                if coordinator.events.isEmpty {
-                    IsEmptyView(currentItem: "event")
-                } else {
-                    AllEventsView(events: $coordinator.events, currentEvent: $currentEvent)
-                }
+                
             })
             .navigationTitle("Events")
             .toolbar(content: {
                 NavigationLink {
-                    NewEventView(events: $coordinator.events)
+                    Menu("sdfa") {
+                        
+                    }
+                    NewEventView(events: $coordinator.incomes)
                         .navigationTitle("New event")
                         .toolbarRole(.editor)
                 } label: {
@@ -40,5 +38,5 @@ struct EventsView: View {
 }
 
 #Preview {
-    EventsView()
+    BudgetView()
 }

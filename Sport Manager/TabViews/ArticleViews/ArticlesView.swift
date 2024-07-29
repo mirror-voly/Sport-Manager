@@ -19,12 +19,7 @@ struct ArticlesView: View {
                 Color(.mainBackground)
                     .ignoresSafeArea()
                 if coordinator.articles.isEmpty{
-                    VStack(spacing: 10, content: {
-                        Text("No articles added")
-                            .font(.system(size: 28))
-                        Text("Add an article with the plus icon above")
-                            .font(.system(size: 17))
-                    })
+                    IsEmptyView(currentItem: "article")
                 } else {
                     AllArticlesView(articles: $coordinator.articles, currentArticle: $currentArticle)
                 }

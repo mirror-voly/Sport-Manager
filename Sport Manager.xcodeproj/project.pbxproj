@@ -20,6 +20,10 @@
 		516859C12C4AB5EC00FBB014 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859C02C4AB5EC00FBB014 /* RootView.swift */; };
 		5171E3732C5775FC00415FA6 /* AllEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E3722C5775FC00415FA6 /* AllEventsView.swift */; };
 		5171E3752C57823F00415FA6 /* AllArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E3742C57823F00415FA6 /* AllArticlesView.swift */; };
+		5171E3772C5785DF00415FA6 /* IncomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E3762C5785DF00415FA6 /* IncomeModel.swift */; };
+		5171E3792C5785F300415FA6 /* ExpensModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E3782C5785F300415FA6 /* ExpensModel.swift */; };
+		5171E37B2C57877A00415FA6 /* IsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E37A2C57877A00415FA6 /* IsEmptyView.swift */; };
+		5171E37E2C57891900415FA6 /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E37D2C57891900415FA6 /* IncomeView.swift */; };
 		517246FE2C539B8D008EF4F6 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517246FD2C539B8D008EF4F6 /* EventModel.swift */; };
 		517247002C539CA9008EF4F6 /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517246FF2C539CA9008EF4F6 /* NewEventView.swift */; };
 		517247022C539D3B008EF4F6 /* EventDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517247012C539D3B008EF4F6 /* EventDescription.swift */; };
@@ -68,6 +72,10 @@
 		516859C02C4AB5EC00FBB014 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		5171E3722C5775FC00415FA6 /* AllEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsView.swift; sourceTree = "<group>"; };
 		5171E3742C57823F00415FA6 /* AllArticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllArticlesView.swift; sourceTree = "<group>"; };
+		5171E3762C5785DF00415FA6 /* IncomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeModel.swift; sourceTree = "<group>"; };
+		5171E3782C5785F300415FA6 /* ExpensModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensModel.swift; sourceTree = "<group>"; };
+		5171E37A2C57877A00415FA6 /* IsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsEmptyView.swift; sourceTree = "<group>"; };
+		5171E37D2C57891900415FA6 /* IncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
 		517246FD2C539B8D008EF4F6 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		517246FF2C539CA9008EF4F6 /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 		517247012C539D3B008EF4F6 /* EventDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDescription.swift; sourceTree = "<group>"; };
@@ -193,6 +201,15 @@
 			path = "Sport ManagerUITests";
 			sourceTree = "<group>";
 		};
+		5171E37C2C5788EB00415FA6 /* BudgetViews */ = {
+			isa = PBXGroup;
+			children = (
+				5173D16E2C4FDA0A005909B1 /* BudgetView.swift */,
+				5171E37D2C57891900415FA6 /* IncomeView.swift */,
+			);
+			path = BudgetViews;
+			sourceTree = "<group>";
+		};
 		5173D1742C4FDA49005909B1 /* StartViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,7 +224,7 @@
 			children = (
 				512FB3FE2C53BAE300A81D7A /* ArticleViews */,
 				512FB3FF2C53BB1900A81D7A /* EventsViews */,
-				5173D16E2C4FDA0A005909B1 /* BudgetView.swift */,
+				5171E37C2C5788EB00415FA6 /* BudgetViews */,
 				5173D1702C4FDA1B005909B1 /* PostsView.swift */,
 				5173D1722C4FDA2E005909B1 /* SettingsView.swift */,
 			);
@@ -218,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				5176E8842C4FC06F00940EA7 /* TabViewItem.swift */,
+				5171E37A2C57877A00415FA6 /* IsEmptyView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -227,6 +245,8 @@
 			children = (
 				514F9E902C5006FD006B164A /* ArticleModel.swift */,
 				517246FD2C539B8D008EF4F6 /* EventModel.swift */,
+				5171E3762C5785DF00415FA6 /* IncomeModel.swift */,
+				5171E3782C5785F300415FA6 /* ExpensModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -362,14 +382,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				514F9E912C5006FD006B164A /* ArticleModel.swift in Sources */,
+				5171E37E2C57891900415FA6 /* IncomeView.swift in Sources */,
 				51BEDADC2C526E4300E8D3D4 /* DataManager.swift in Sources */,
 				516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */,
 				5171E3752C57823F00415FA6 /* AllArticlesView.swift in Sources */,
 				51AEEE3A2C5155FB00CD2C96 /* ArticleDescription.swift in Sources */,
+				5171E3772C5785DF00415FA6 /* IncomeModel.swift in Sources */,
 				514F9E8F2C5005CE006B164A /* NewArticle.swift in Sources */,
 				5173D16F2C4FDA0A005909B1 /* BudgetView.swift in Sources */,
+				5171E37B2C57877A00415FA6 /* IsEmptyView.swift in Sources */,
 				5171E3732C5775FC00415FA6 /* AllEventsView.swift in Sources */,
 				5173D16D2C4FD9F2005909B1 /* EventsView.swift in Sources */,
+				5171E3792C5785F300415FA6 /* ExpensModel.swift in Sources */,
 				5176E8832C4FBE4000940EA7 /* ArticlesView.swift in Sources */,
 				51599A1C2C4AB8E50052EADF /* LoadingView.swift in Sources */,
 				5173D1732C4FDA2E005909B1 /* SettingsView.swift in Sources */,
