@@ -14,7 +14,7 @@ struct IncomesView: View {
         GridItem(.adaptive(minimum: 170))
     ]
     
-    let dataManager = DataManager()
+    private let dataManager = DataManager()
     
     private func removeThis(income: Income) {
         if let index = incomes.firstIndex(of: income) {
@@ -24,23 +24,14 @@ struct IncomesView: View {
     }
     
     var body: some View {
-        VStack(content: {
-            
-        }).onAppear(perform: {
-            incomes.append(Income(title: "How Falcons stay on the top after 15 years", date: "02.03.2023", sum: "230"))
-            incomes.append(Income(title: "sdsafa sadf sdf asdfa sdfae rwe re wer ", date: "02.03.2023", sum: "230"))
-            incomes.append(Income(title: "sdsafa sadf sdf ", date: "02.03.2023", sum: "230"))
-            incomes.append(Income(title: "sdsafa te rwe re wer ", date: "02.03.20235555555555555", sum: "230"))
-            incomes.append(Income(title: "sdsafa sadrtdrtdrtd tdr t drtdr tdr tdr tdr tdr drtdr tdrt d wer ", date: "02.03.2023", sum: "2305555555"))
-        })
-        
+
         if incomes.isEmpty {
             IsEmptyView(currentItem: "incom")
         } else {
             ScrollView(.vertical) {
                 LazyVGrid(columns: grid, spacing: 8,  content: {
                     ForEach(incomes, id: \.self) { item in
-                        VStack(alignment: .leading, spacing: 8, content: {
+                        VStack(alignment: .leading, spacing: 10, content: {
                             VStack(alignment: .leading, spacing: 8, content: {
                                 HStack(content: {
                                     Text(item.date)
@@ -59,7 +50,7 @@ struct IncomesView: View {
                                 Text(item.title)
                                     .font(.system(size: 16))
                                     .lineLimit(nil)
-                                    .frame(maxHeight: .infinity)
+                                Spacer()
                             })
                             .padding(.horizontal, 20)
                             .padding(.top, 20)
@@ -68,8 +59,8 @@ struct IncomesView: View {
                                 .lineLimit(1)
                                 .colorMultiply(.budgetGreen)
                                 .font(.system(size: 34))
-                                .padding(20)
-                            
+                                .padding(.horizontal)
+                                .padding(.bottom)
                         })
                         .background(Color.cardBackGround)
                         .clipShape(.rect(cornerRadius: 30))
