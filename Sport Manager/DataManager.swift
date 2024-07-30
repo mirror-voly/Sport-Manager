@@ -7,13 +7,23 @@
 
 import Foundation
 
-final class DataManager {
+final class DataManager: ObservableObject {
+    
+    init() {
+        tryToLoadData() 
+    }
+    
+    @Published var notAFirstStart: Bool = false
+    @Published var articles: [Article] = []
+    @Published var events: [Event] = []
+    @Published var incomes: [Income] = []
+    @Published var expenses: [Expense] = []
     
     func saveSettings(first: Bool) {
         UserDefaults.standard.set(first, forKey: "notAFirstStart")
     }
     
-    func loadSettings() -> Bool? {
+    private func loadSettings() -> Bool? {
         let notAFirstStart = UserDefaults.standard.bool(forKey: "notAFirstStart")
         return notAFirstStart
     }
@@ -24,7 +34,7 @@ final class DataManager {
     }
     
 
-    func loadArticles() -> [Article]? {
+    private func loadArticles() -> [Article]? {
         if let data = UserDefaults.standard.object(forKey: "articles") as? Data {
             guard let loadedArticles = try? JSONDecoder().decode([Article].self, from: data) else { return nil }
             return loadedArticles
@@ -37,7 +47,7 @@ final class DataManager {
         UserDefaults.standard.set(encoded, forKey: "events")
     }
     
-    func loadEvents() -> [Event]? {
+    private func loadEvents() -> [Event]? {
         if let data = UserDefaults.standard.object(forKey: "events") as? Data {
             guard let loadedEvents = try? JSONDecoder().decode([Event].self, from: data) else { return nil }
             return loadedEvents
@@ -50,7 +60,7 @@ final class DataManager {
         UserDefaults.standard.set(encoded, forKey: "incomes")
     }
     
-    func loadIncomes() -> [Income]? {
+    private func loadIncomes() -> [Income]? {
         if let data = UserDefaults.standard.object(forKey: "incomes") as? Data {
             guard let loadedIncomes = try? JSONDecoder().decode([Income].self, from: data) else { return nil }
             return loadedIncomes
@@ -63,11 +73,32 @@ final class DataManager {
         UserDefaults.standard.set(encoded, forKey: "expenses")
     }
     
-    func loadExpenses() -> [Expense]? {
+    private func loadExpenses() -> [Expense]? {
         if let data = UserDefaults.standard.object(forKey: "expenses") as? Data {
             guard let loadedExpenses = try? JSONDecoder().decode([Expense].self, from: data) else { return nil }
             return loadedExpenses
         }
         return nil
+    }
+    
+    private func tryToLoadData() {
+        if let loadedArticles = loadArticles() {
+            articles = loadedArticles
+        }
+        if let loadedsettings = loadSettings() {
+            notAFirstStart = loadedsettings
+        }
+        
+        if let loadedEvents = loadEvents() {
+            events = loadedEvents
+        }
+        
+        if let loadedIncomes = loadIncomes() {
+            incomes = loadedIncomes
+        }
+        
+        if let loadedExpenses = loadExpenses() {
+            expenses = loadedExpenses
+        }
     }
 }

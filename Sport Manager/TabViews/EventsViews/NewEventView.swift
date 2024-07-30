@@ -20,7 +20,7 @@ struct NewEventView: View {
     @State var date = ""
     private let allSportTypes = Event.SportType.allCases
  
-    private let dataManager = DataManager()
+    @EnvironmentObject private var dataManager: DataManager
     @Environment(\.dismiss) var dismis
       
     func isAllFieldsSet() {

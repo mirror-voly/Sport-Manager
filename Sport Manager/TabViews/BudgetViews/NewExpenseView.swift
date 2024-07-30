@@ -9,13 +9,13 @@ import SwiftUI
 
 struct NewExpenseView: View {
     
+    @EnvironmentObject private var dataManager: DataManager
     @Binding var expenses: [Expense]
     @State var allSet = false
     @State var title = ""
     @State var date = ""
     @State var sum = ""
- 
-    private let dataManager = DataManager()
+
     @Environment(\.dismiss) var dismis
       
     func isAllFieldsSet() {

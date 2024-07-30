@@ -34,12 +34,12 @@
 		5173D16F2C4FDA0A005909B1 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5173D16E2C4FDA0A005909B1 /* BudgetView.swift */; };
 		5173D1712C4FDA1B005909B1 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5173D1702C4FDA1B005909B1 /* PostsView.swift */; };
 		5173D1732C4FDA2E005909B1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5173D1722C4FDA2E005909B1 /* SettingsView.swift */; };
-		5173D1772C4FDB1D005909B1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5173D1762C4FDB1D005909B1 /* Coordinator.swift */; };
 		5176E8832C4FBE4000940EA7 /* ArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176E8822C4FBE4000940EA7 /* ArticlesView.swift */; };
 		5176E8852C4FC06F00940EA7 /* TabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176E8842C4FC06F00940EA7 /* TabViewItem.swift */; };
 		517972462C58B4C700958BC5 /* NewPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517972452C58B4C700958BC5 /* NewPurchase.swift */; };
 		517972482C58C9E700958BC5 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517972472C58C9E600958BC5 /* ExpensesView.swift */; };
 		5179724A2C58CCD700958BC5 /* CustomSegmetedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517972492C58CCD700958BC5 /* CustomSegmetedControl.swift */; };
+		5179724D2C59104000958BC5 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5179724C2C59104000958BC5 /* OnboardView.swift */; };
 		51AEEE3A2C5155FB00CD2C96 /* ArticleDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AEEE392C5155FB00CD2C96 /* ArticleDescription.swift */; };
 		51BEDADC2C526E4300E8D3D4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BEDADB2C526E4300E8D3D4 /* DataManager.swift */; };
 /* End PBXBuildFile section */
@@ -92,12 +92,12 @@
 		5173D16E2C4FDA0A005909B1 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		5173D1702C4FDA1B005909B1 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 		5173D1722C4FDA2E005909B1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		5173D1762C4FDB1D005909B1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5176E8822C4FBE4000940EA7 /* ArticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesView.swift; sourceTree = "<group>"; };
 		5176E8842C4FC06F00940EA7 /* TabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewItem.swift; sourceTree = "<group>"; };
 		517972452C58B4C700958BC5 /* NewPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPurchase.swift; sourceTree = "<group>"; };
 		517972472C58C9E600958BC5 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		517972492C58CCD700958BC5 /* CustomSegmetedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmetedControl.swift; sourceTree = "<group>"; };
+		5179724C2C59104000958BC5 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		51AEEE362C511F0400CD2C96 /* Sport-Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sport-Manager-Info.plist"; sourceTree = SOURCE_ROOT; };
 		51AEEE392C5155FB00CD2C96 /* ArticleDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDescription.swift; sourceTree = "<group>"; };
 		51BEDADB2C526E4300E8D3D4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -179,7 +179,6 @@
 				5173D1742C4FDA49005909B1 /* StartViews */,
 				516859C02C4AB5EC00FBB014 /* RootView.swift */,
 				5173D1752C4FDA6A005909B1 /* TabViews */,
-				5173D1762C4FDB1D005909B1 /* Coordinator.swift */,
 				51BEDADB2C526E4300E8D3D4 /* DataManager.swift */,
 				5173D1782C4FDB27005909B1 /* Helpers */,
 				516859922C4A51E200FBB014 /* Assets.xcassets */,
@@ -240,7 +239,7 @@
 				512FB3FE2C53BAE300A81D7A /* ArticleViews */,
 				512FB3FF2C53BB1900A81D7A /* EventsViews */,
 				5171E37C2C5788EB00415FA6 /* BudgetViews */,
-				5173D1702C4FDA1B005909B1 /* PostsView.swift */,
+				5179724B2C590D2000958BC5 /* PostViews */,
 				5173D1722C4FDA2E005909B1 /* SettingsView.swift */,
 			);
 			path = TabViews;
@@ -253,6 +252,7 @@
 				517972492C58CCD700958BC5 /* CustomSegmetedControl.swift */,
 				5171E37F2C5798E900415FA6 /* PopUpView.swift */,
 				5171E37A2C57877A00415FA6 /* IsEmptyView.swift */,
+				5179724C2C59104000958BC5 /* OnboardView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -267,6 +267,14 @@
 				5171E3782C5785F300415FA6 /* ExpensModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5179724B2C590D2000958BC5 /* PostViews */ = {
+			isa = PBXGroup;
+			children = (
+				5173D1702C4FDA1B005909B1 /* PostsView.swift */,
+			);
+			path = PostViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,10 +423,10 @@
 				5171E3792C5785F300415FA6 /* ExpensModel.swift in Sources */,
 				5176E8832C4FBE4000940EA7 /* ArticlesView.swift in Sources */,
 				515621872C57C567005477BB /* NewExpenseView.swift in Sources */,
+				5179724D2C59104000958BC5 /* OnboardView.swift in Sources */,
 				51599A1C2C4AB8E50052EADF /* LoadingView.swift in Sources */,
 				5179724A2C58CCD700958BC5 /* CustomSegmetedControl.swift in Sources */,
 				5173D1732C4FDA2E005909B1 /* SettingsView.swift in Sources */,
-				5173D1772C4FDB1D005909B1 /* Coordinator.swift in Sources */,
 				5168598F2C4A51E100FBB014 /* Sport_ManagerApp.swift in Sources */,
 				5176E8852C4FC06F00940EA7 /* TabViewItem.swift in Sources */,
 				517972482C58C9E700958BC5 /* ExpensesView.swift in Sources */,

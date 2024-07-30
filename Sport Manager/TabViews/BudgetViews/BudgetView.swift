@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BudgetView: View {
     
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var coordinator: DataManager
     
     @State private var sheetIsOpened = false
     @State private var navigationAddButtonePopUP = false

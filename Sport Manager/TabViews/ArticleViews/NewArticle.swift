@@ -16,9 +16,8 @@ struct NewArticle: View {
     @State var correntSportType: Int?
     @State var correntStatus: Int?
     @State var allSet = false
-    
-    let dataManager = DataManager()
-    
+
+    @EnvironmentObject private var dataManager: DataManager
     @Environment(\.dismiss) var dismis
     
     private let allSportTypes = Article.SportType.allCases

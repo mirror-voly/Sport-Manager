@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ExpensesView: View {
     
+    
+    @EnvironmentObject private var dataManager: DataManager
+    
     @Binding var expenses: [Expense]
     private let grid = [
         GridItem(.adaptive(minimum: 170))
     ]
-    
-    private let dataManager = DataManager()
     
     private func removeThis(expense: Expense) {
         if let index = expenses.firstIndex(of: expense) {

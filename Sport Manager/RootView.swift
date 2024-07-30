@@ -10,39 +10,16 @@ import SwiftUI
 
 struct RootView: View {
     
-    @StateObject private var coordinator = Coordinator()
+    @StateObject private var dataManager = DataManager()
     @State var tabViewIndex = 0
-    private var dataManager = DataManager()
-    
-    func tryToLoadData() {
-        if let articles = dataManager.loadArticles() {
-            coordinator.articles = articles
-        }
-        if let settings = dataManager.loadSettings() {
-            coordinator.notAFirstStart = settings
-        }
-        
-        if let events = dataManager.loadEvents() {
-            coordinator.events = events
-        }
-        
-        if let incomes = dataManager.loadIncomes() {
-            coordinator.incomes = incomes
-        }
-        
-        if let expenses = dataManager.loadExpenses() {
-            coordinator.expenses = expenses
-        }
-    }
-    
+
     init() {
         UITabBar.appearance().backgroundColor = UIColor(.buttonColorActive.opacity(0.2))
        }
     
-    
     var body: some View {
         ZStack(content: {
-            if coordinator.notAFirstStart == true {
+            if dataManager.notAFirstStart == true {
                 TabView(selection: $tabViewIndex,
                         content: {
                     ArticlesView().tabItem { TabViewItem(tabViewImageName: "doc.fill", tabViewText: "Articles") }
@@ -51,12 +28,10 @@ struct RootView: View {
                     PostsView().tabItem { TabViewItem(tabViewImageName: "doc.richtext.fill", tabViewText: "Posts") }
                     SettingsView().tabItem { TabViewItem(tabViewImageName: "gearshape.fill", tabViewText: "Settings") }
                 })
-                .environmentObject(coordinator)
+                .environmentObject(dataManager)
             } else {
-                OnboardViewPresenter(notAFirstStart: $coordinator.notAFirstStart)
+                OnboardViewPresenter(notAFirstStart: $dataManager.notAFirstStart)
             }
-        }).onAppear(perform: {
-            tryToLoadData()
         })
         
     }

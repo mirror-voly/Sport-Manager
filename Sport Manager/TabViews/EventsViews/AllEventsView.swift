@@ -12,7 +12,7 @@ struct AllEventsView: View {
     @Binding var events: [Event]
     @Binding var currentEvent: Event?
     
-    private let dataManager = DataManager()
+    @EnvironmentObject private var dataManager: DataManager
     
     private func removeCurrentEventElement() {
         if let index = events.firstIndex(of: currentEvent!) {

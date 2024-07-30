@@ -10,11 +10,12 @@ import SwiftUI
 struct IncomesView: View {
     
     @Binding var incomes: [Income]
+    
+    @EnvironmentObject private var dataManager: DataManager
+    
     private let grid = [
         GridItem(.adaptive(minimum: 170))
     ]
-    
-    private let dataManager = DataManager()
     
     private func removeThis(income: Income) {
         if let index = incomes.firstIndex(of: income) {

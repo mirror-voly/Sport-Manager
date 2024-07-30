@@ -9,12 +9,12 @@ import SwiftUI
 
 struct OnboardViewPresenter: View {
     
-    private let dataManager = DataManager()
     @State var viewTitle = ""
     @State var viewText = ""
     @State var currentView = 0
     @Binding var notAFirstStart: Bool
-        
+    @EnvironmentObject private var dataManager: DataManager
+    
     var body: some View {
         GeometryReader(content: { geometry in
             VStack {
@@ -68,23 +68,6 @@ struct OnboardViewPresenter: View {
             }
         })
             
-    }
-}
-
-
-struct OnboardView: View, Identifiable {
-    
-    var id = UUID()
-    let viewImageName: String
-    
-    var body: some View {
-        GeometryReader(content: { geometry in
-            Image(viewImageName)
-                .resizable()
-                .frame(width: geometry.size.width, height: 575)
-        })
-        
-        
     }
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EventsView: View {
     
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var coordinator: DataManager
     @State var currentEvent: Event?
     
     var body: some View {

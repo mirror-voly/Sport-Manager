@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ArticlesView: View {
     
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var dataManager: DataManager
     @State var currentArticle: Article?
     
     var body: some View {
@@ -18,16 +18,16 @@ struct ArticlesView: View {
             ZStack(content: {
                 Color(.mainBackground)
                     .ignoresSafeArea()
-                if coordinator.articles.isEmpty{
+                if dataManager.articles.isEmpty{
                     IsEmptyView(currentItem: "article")
                 } else {
-                    AllArticlesView(articles: $coordinator.articles, currentArticle: $currentArticle)
+                    AllArticlesView(articles: $dataManager.articles, currentArticle: $currentArticle)
                 }
             })
             .navigationTitle("Articles")
             .toolbar(content: {
                 NavigationLink {
-                    NewArticle(articles: $coordinator.articles)
+                    NewArticle(articles: $dataManager.articles)
                         .navigationTitle("New article")
                         .toolbarRole(.editor)
                 } label: {
