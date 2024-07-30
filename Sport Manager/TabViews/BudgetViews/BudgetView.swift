@@ -45,26 +45,42 @@ struct BudgetView: View {
                         currentNewPurcheaseState = nil
                     }, content: {
                         NavigationStack {
-                            
-                        
-                        switch currentNewPurcheaseState {
-                        case .newIncome: NewIncomeView()
-                                .navigationTitle("New income")
-                                .toolbarRole(.editor)
-                        case .newExpence: NewExpenseView()
-                                .navigationTitle("New expense")
-                                .toolbarRole(.editor)
-                        case .none:
-                            Text("Error, \(String(describing: currentNewPurcheaseState)))")
-                        }
+                            switch currentNewPurcheaseState {
+                            case .newIncome: NewIncomeView(incomes: $coordinator.incomes)
+                                    .navigationTitle("New income")
+                                    .toolbar(content: {
+                                        ToolbarItem(placement: .topBarLeading) {
+                                            Button {
+                                                sheetIsOpened = true
+                                            }
+                                        label: {
+                                            Image(systemName: "chevron.backward")
+                                                .fontWeight(.semibold)
+                                        }
+                                        }
+                                    })
+                            case .newExpence: NewExpenseView(expenses: $coordinator.expenses)
+                                    .navigationTitle("New expense")
+                                    .toolbar(content: {
+                                        ToolbarItem(placement: .topBarLeading) {
+                                            Button {
+                                                sheetIsOpened = true
+                                            }
+                                        label: {
+                                            Image(systemName: "chevron.backward")
+                                                .fontWeight(.semibold)
+                                        }
+                                        }
+                                    })
+                            case .none:
+                                Text("Error, \(String(describing: currentNewPurcheaseState)))")
+                            }
                         }
                     })
-
                 }
             })
             
         }
-        
     }
 }
 

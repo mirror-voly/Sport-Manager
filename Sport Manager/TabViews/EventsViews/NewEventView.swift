@@ -31,7 +31,7 @@ struct NewEventView: View {
         }
     }
     
-    private func save() {
+    private func addNew() {
         let newEvent = Event(sportType: allSportTypes[correntSportType!], subtitle: subtitle, teamOneName: teamOneName, teamTwoName: teamTwoName, teamOneScore: teamOneScore, teamTwoScore: teamTwoScore, date: date)
         events.append(newEvent)
         dataManager.saveEvents(events: events)
@@ -177,7 +177,7 @@ struct NewEventView: View {
                 )
                 Spacer()
                 Button(action: {
-                    save()
+                    addNew()
                     dismis()
                 }, label: {
                             if allSet {

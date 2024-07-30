@@ -9,9 +9,7 @@ import SwiftUI
 
 struct NewIncomeView: View {
     
-        
-        
-//        @Binding var incomes: [Income]
+        @Binding var incomes: [Income]
         @State var allSet = false
         @State var title = ""
         @State var date = ""
@@ -28,11 +26,11 @@ struct NewIncomeView: View {
             }
         }
         
-//        private func save() {
-//            let newEvent = Event(sportType: allSportTypes[correntSportType!], subtitle: subtitle, teamOneName: teamOneName, teamTwoName: teamTwoName, teamOneScore: teamOneScore, teamTwoScore: teamTwoScore, date: date)
-//            events.append(newEvent)
-//            dataManager.saveEvents(events: events)
-//        }
+        private func addNew() {
+            let newIncome = Income(title: title, date: date, sum: sum)
+            incomes.append(newIncome)
+            dataManager.saveIncomes(income: incomes)
+        }
         
     var body: some View {
         ZStack {
@@ -56,8 +54,6 @@ struct NewIncomeView: View {
                             .padding()
                     )
                 })
-                
-                
                 
                 HStack(spacing: -20, content: {
                     VStack(content: {
@@ -96,7 +92,7 @@ struct NewIncomeView: View {
                 Spacer()
                 
                 Button(action: {
-                    //                        save()
+                    addNew()
                     dismis()
                 }, label: {
                     if allSet {
@@ -122,7 +118,7 @@ struct NewIncomeView: View {
         }
     }
 }
-
-#Preview {
-    NewIncomeView()
-}
+//
+//#Preview {
+//    NewIncomeView()
+//}

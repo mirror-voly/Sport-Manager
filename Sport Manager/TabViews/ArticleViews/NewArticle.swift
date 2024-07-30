@@ -24,7 +24,13 @@ struct NewArticle: View {
     private let allSportTypes = Article.SportType.allCases
     private let allStatus = Article.Status.allCases
     
-    func isAllFieldsSet() {
+    private func addNew() {
+        let newArticle = Article(title: title, sportType: allSportTypes[correntSportType!], text: articleText, publisher: publisher, status: allStatus[correntStatus!])
+        articles.append(newArticle)
+        dataManager.saveArticles(articles: articles)
+    }
+    
+    private func isAllFieldsSet() {
         if !title.isEmpty && !articleText.isEmpty && !publisher.isEmpty && correntSportType != nil {
             allSet = true
         } else {
@@ -164,9 +170,7 @@ struct NewArticle: View {
                 .padding(.top, -10)
                 Spacer()
                 Button(action: {
-                    let newArticle = Article(title: title, sportType: allSportTypes[correntSportType!], text: articleText, publisher: publisher, status: allStatus[correntStatus!])
-                    articles.append(newArticle)
-                    dataManager.saveArticles(articles: articles)
+                    addNew()
                     dismis()
                 }, label: {
                             if allSet {

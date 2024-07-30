@@ -45,4 +45,29 @@ final class DataManager {
         return nil
     }
     
+    func saveIncomes(income: [Income]) {
+        guard let encoded = try? JSONEncoder().encode(income) else { return }
+        UserDefaults.standard.set(encoded, forKey: "incomes")
+    }
+    
+    func loadIncomes() -> [Income]? {
+        if let data = UserDefaults.standard.object(forKey: "incomes") as? Data {
+            guard let loadedIncomes = try? JSONDecoder().decode([Income].self, from: data) else { return nil }
+            return loadedIncomes
+        }
+        return nil
+    }
+    
+    func saveExpenses(expenses: [Expense]) {
+        guard let encoded = try? JSONEncoder().encode(expenses) else { return }
+        UserDefaults.standard.set(encoded, forKey: "expenses")
+    }
+    
+    func loadExpenses() -> [Expense]? {
+        if let data = UserDefaults.standard.object(forKey: "expenses") as? Data {
+            guard let loadedExpenses = try? JSONDecoder().decode([Expense].self, from: data) else { return nil }
+            return loadedExpenses
+        }
+        return nil
+    }
 }
