@@ -181,7 +181,7 @@
 				5173D1752C4FDA6A005909B1 /* TabViews */,
 				5173D1762C4FDB1D005909B1 /* Coordinator.swift */,
 				51BEDADB2C526E4300E8D3D4 /* DataManager.swift */,
-				5173D1782C4FDB27005909B1 /* Items */,
+				5173D1782C4FDB27005909B1 /* Helpers */,
 				516859922C4A51E200FBB014 /* Assets.xcassets */,
 				516859942C4A51E200FBB014 /* Preview Content */,
 			);
@@ -246,7 +246,7 @@
 			path = TabViews;
 			sourceTree = "<group>";
 		};
-		5173D1782C4FDB27005909B1 /* Items */ = {
+		5173D1782C4FDB27005909B1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				5176E8842C4FC06F00940EA7 /* TabViewItem.swift */,
@@ -254,7 +254,7 @@
 				5171E37F2C5798E900415FA6 /* PopUpView.swift */,
 				5171E37A2C57877A00415FA6 /* IsEmptyView.swift */,
 			);
-			path = Items;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		517732B02C50F833006EB2F0 /* Models */ = {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Expense: Codable {
+struct Expense: Codable, Hashable  {
     
     var id = UUID()
     

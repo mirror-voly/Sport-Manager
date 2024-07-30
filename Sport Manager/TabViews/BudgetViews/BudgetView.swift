@@ -24,13 +24,16 @@ struct BudgetView: View {
                     .ignoresSafeArea()
                 VStack {
                     CustomSegmetedControl(currentSegment: $currentSegment)
+                        .padding(.bottom)
                     VStack(content: {
                         switch currentSegment {
                         case .income: IncomesView(incomes: $coordinator.incomes)
                         case .expence: ExpensesView(expenses: $coordinator.expenses)
                         }
-                    }).frame(maxHeight: .infinity)
-                }.padding()
+                    })
+                    .frame(maxHeight: .infinity)
+                }
+                .padding(.horizontal)
             })
             .navigationTitle("Budget")
             .toolbar(content: {
