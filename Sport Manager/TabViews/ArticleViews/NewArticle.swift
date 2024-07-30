@@ -38,141 +38,143 @@ struct NewArticle: View {
     }
     
     var body: some View {
-        GeometryReader(content: { geometry in
-        ZStack {
-            Color(.mainBackground)
-                .ignoresSafeArea()
-            VStack(content: {
+        
+        ScrollViewReader(content: { proxy in
+            
+            ZStack {
+                Color(.mainBackground)
+                    .ignoresSafeArea()
                 VStack(content: {
-                        TextField("Headline", text: $title)
-                        .onChange(of: title, { _, _ in
-                            isAllFieldsSet()
-                        })
-                            .padding()
-                })
-                .frame(height: 62)
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
-                        .stroke(.white, lineWidth: 1)
-                        .padding()
-                )
-                .padding(.top, -10)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 8, content: {
-                        ForEach(Array(zip(allSportTypes.indices, allSportTypes)), id: \.0) { index, item in
-                            VStack(alignment: .center, content: {
-                                Button {
-                                    if correntSportType == index {
-                                        correntSportType = nil
-                                    } else {
-                                        correntSportType = index
-                                    }
-                                    
+                    ScrollView(.vertical) {
+                        
+                        VStack(content: {
+                            TextField("Headline", text: $title)
+                                .onChange(of: title, { _, _ in
                                     isAllFieldsSet()
-                                } label: {
-                                    ZStack(content: {
-                                        if correntSportType != index {
-                                            Color.buttonColorActive.opacity(0.5)
-                                        } else {
-                                            Color.buttonColorActive
+                                })
+                                .padding()
+                        })
+                        .frame(height: 62)
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
+                                .stroke(.white, lineWidth: 1)
+                                .padding()
+                        )
+                        .padding(.top, -10)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 8, content: {
+                                ForEach(Array(zip(allSportTypes.indices, allSportTypes)), id: \.0) { index, item in
+                                    VStack(alignment: .center, content: {
+                                        Button {
+                                            if correntSportType == index {
+                                                correntSportType = nil
+                                            } else {
+                                                correntSportType = index
+                                            }
+                                            isAllFieldsSet()
+                                        } label: {
+                                            ZStack(content: {
+                                                if correntSportType != index {
+                                                    Color.buttonColorActive.opacity(0.5)
+                                                } else {
+                                                    Color.buttonColorActive
+                                                }
+                                                Text(item.rawValue)
+                                                    .tint(.white)
+                                                    .font(.system(size: 11))
+                                                    .lineLimit(1)
+                                                    .padding(8)
+                                                    .fixedSize()
+                                            })
+                                            .frame(height: 21)
                                         }
-                                        Text(item.rawValue)
-                                            .tint(.white)
-                                            .font(.system(size: 11))
-                                            .lineLimit(1)
-                                            .padding(8)
-                                            .fixedSize()
                                     })
-                                    .frame(height: 21)
+                                    .clipShape(.rect(cornerRadius: 50))
                                 }
                             })
-                            .clipShape(.rect(cornerRadius: 50))
                         }
-                    })
-                }
-                .padding(.leading)
-                
-                HStack(alignment: .center, content: {
-                    Menu {
-                        ForEach(Array(zip(allStatus.indices, allStatus)), id: \.0) { index, item in
-                            Button(item.rawValue) {
-                                correntStatus = index
-                                isAllFieldsSet()
-                            }
-                        }
-                    } label: {
-                        HStack(content: {
-                            if correntStatus != nil {
+                        .padding(.leading)
+                        
+                        HStack(alignment: .center, content: {
+                            Menu {
+                                ForEach(Array(zip(allStatus.indices, allStatus)), id: \.0) { index, item in
+                                    Button(item.rawValue) {
+                                        correntStatus = index
+                                        isAllFieldsSet()
+                                    }
+                                }
+                            } label: {
                                 HStack(content: {
-                                    Text(allStatus[correntStatus!].rawValue)
-                                    Image(systemName: "triangle")
-                                        .font(.system(size: 10))
-                                        
+                                    if correntStatus != nil {
+                                        HStack(content: {
+                                            Text(allStatus[correntStatus!].rawValue)
+                                            Image(systemName: "triangle")
+                                                .font(.system(size: 10))
+                                        })
+                                        .tint(Color.white)
+                                    } else {
+                                        HStack(content: {
+                                            Text("Status")
+                                            Image(systemName: "triangle")
+                                                .rotationEffect(Angle(degrees: 180))
+                                                .font(.system(size: 10))
+                                        })
+                                        .tint(Color(UIColor.placeholderText))
+                                    }
                                 })
-                                .tint(Color.white)
-                            } else {
-                                HStack(content: {
-                                    Text("Status")
-                                    Image(systemName: "triangle")
-                                        .rotationEffect(Angle(degrees: 180))
-                                        .font(.system(size: 10))
-                                })
-                                .tint(Color(UIColor.placeholderText))
+                                .padding()
+                                .font(.system(size: 17))
                             }
+                            Spacer()
                         })
+                        
+                        .frame(height: 62)
                         .padding()
-                        .font(.system(size: 17))
-                    }
-                        Spacer()
-                })
-                
-                .frame(height: 62)
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
-                        .stroke(.white, lineWidth: 1)
-                        .padding()
-                )
-                
-                VStack(content: {
-                        TextField("Publisher", text: $publisher)
-                        .onChange(of: publisher, { _, _ in
-                            isAllFieldsSet()
+                        .overlay(
+                            RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
+                                .stroke(.white, lineWidth: 1)
+                                .padding()
+                        )
+                        
+                        VStack(content: {
+                            TextField("Publisher", text: $publisher)
+                                .onChange(of: publisher, { _, _ in
+                                    isAllFieldsSet()
+                                })
+                                .padding()
                         })
+                        .frame(height: 62)
                         .padding()
-                })
-                .frame(height: 62)
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
-                        .stroke(.white, lineWidth: 1)
-                        .padding()
-                )
-                .padding(.top, -10)
-                
-                VStack(content: {
-                    TextField("Article text", text: $articleText, axis: .vertical)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .onChange(of: articleText, { _, _ in
-                            isAllFieldsSet()
+                        .overlay(
+                            RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
+                                .stroke(.white, lineWidth: 1)
+                                .padding()
+                        )
+                        .padding(.top, -10)
+                        
+                        VStack(content: {
+                            TextField("Article text", text: $articleText, axis: .vertical)
+                                .onChange(of: articleText, { _, _ in
+                                    isAllFieldsSet()
+                                    proxy.scrollTo("button")
+                                })
+                                .padding()
                         })
+                        .frame(minHeight: 62)
                         .padding()
-                })
-                .frame(minHeight: 62)
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
-                        .stroke(.white, lineWidth: 1)
-                        .padding()
-                )
-                .padding(.top, -10)
-                Spacer()
-                Button(action: {
-                    addNew()
-                    dismis()
-                }, label: {
+                        .overlay(
+                            RoundedRectangle(cornerSize: CGSize(width: 20.0, height: 20))
+                                .stroke(.white, lineWidth: 1)
+                                .padding()
+                        )
+                        .padding(.top, -10)
+                        
+                        Button(action: {
+                            addNew()
+                            dismis()
+                        }, label: {
                             if allSet {
                                 Text("Add")
                                     .padding(20)
@@ -189,12 +191,17 @@ struct NewArticle: View {
                                     .clipShape(.rect(cornerRadius: 20))
                             }
                         })
+                        .id("button")
                         .disabled(!allSet)
                         .padding()
-                                
+                        
+                    }
+                })
+            }
+            .onTapGesture(perform: {
+                hideKeyboard()
             })
-            .font(.system(size: 17))
-        }
+            
         })
     }
 }
