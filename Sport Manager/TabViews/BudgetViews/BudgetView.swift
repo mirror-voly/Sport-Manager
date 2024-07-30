@@ -9,14 +9,11 @@ import SwiftUI
 
 struct BudgetView: View {
     
-    
-
-    
     @EnvironmentObject private var coordinator: Coordinator
     
     @State var sheetIsOpened = false
     @State var navigationAddButtonePopUP = false
-//    @State var currentNewPurcheaseState: Coordinator.NewPurchaseState?
+    @State var currentNewPurcheaseState: NewPurchase.NewPurchaseState?
 
     
     var body: some View {
@@ -36,27 +33,31 @@ struct BudgetView: View {
                             .fontWeight(.semibold)
                     })
                     .popover(isPresented: $navigationAddButtonePopUP, content: {
-                        PopUpView(newPurchaseType: $coordinator.newPurchease, navigationAddButtonePopUP: $navigationAddButtonePopUP)
+                        PopUpView(newPurchaseType: $currentNewPurcheaseState, navigationAddButtonePopUP: $navigationAddButtonePopUP)
                             .presentationCompactAdaptation(.popover)
-                            .onDisappear {
-                                if $coordinator.newPurchease != nil {
-                                    sheetIsOpened = true
-                                }
-                                
-                            }
+                    })
+                    .onChange(of: currentNewPurcheaseState, {
+                        if currentNewPurcheaseState != nil {
+                            sheetIsOpened = true
+                        }
                     })
                     .sheet(isPresented: $sheetIsOpened, onDismiss: {
-                        coordinator.newPurchease = nil
+                        currentNewPurcheaseState = nil
                     }, content: {
-                        switch coordinator.newPurchease {
-                        case .newIncome: NewIncomeView()
-                        case .newExpence: NewExpenseView()
-                        case .none:
-                            Text("nothing").onAppear {
-                                print(coordinator.newPurchease)
-                            }
-                        }
+                        NavigationStack {
+                            
                         
+                        switch currentNewPurcheaseState {
+                        case .newIncome: NewIncomeView()
+                                .navigationTitle("New income")
+                                .toolbarRole(.editor)
+                        case .newExpence: NewExpenseView()
+                                .navigationTitle("New expense")
+                                .toolbarRole(.editor)
+                        case .none:
+                            Text("Error, \(String(describing: currentNewPurcheaseState)))")
+                        }
+                        }
                     })
 
                 }
