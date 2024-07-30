@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct PostsView: View {
+    
+    @EnvironmentObject private var dataManager: DataManager
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationStack {
+            ZStack(content: {
+                Color(.mainBackground)
+                    .ignoresSafeArea()
+                if dataManager.events.isEmpty {
+                    IsEmptyView(currentItem: "post")
+                } else {
+//                    AllEventsView(events: $dataManager.events, currentEvent: $currentEvent)
+                }
+            })
+            .navigationTitle("Posts")
+            .toolbar(content: {
+                NavigationLink {
+                    NewPostView(posts: $dataManager.posts)
+                        .navigationTitle("New post")
+                        .toolbarRole(.editor)
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                }
+            })
+        }
+        
     }
 }
 

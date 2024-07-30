@@ -154,6 +154,7 @@ struct NewArticle: View {
                 
                 VStack(content: {
                     TextField("Article text", text: $articleText, axis: .vertical)
+                        .fixedSize(horizontal: false, vertical: true)
                         .onChange(of: articleText, { _, _ in
                             isAllFieldsSet()
                         })

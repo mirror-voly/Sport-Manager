@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EventsView: View {
     
-    @EnvironmentObject private var coordinator: DataManager
+    @EnvironmentObject private var dataManager: DataManager
     @State var currentEvent: Event?
     
     var body: some View {
@@ -18,16 +18,16 @@ struct EventsView: View {
             ZStack(content: {
                 Color(.mainBackground)
                     .ignoresSafeArea()
-                if coordinator.events.isEmpty {
+                if dataManager.events.isEmpty {
                     IsEmptyView(currentItem: "event")
                 } else {
-                    AllEventsView(events: $coordinator.events, currentEvent: $currentEvent)
+                    AllEventsView(events: $dataManager.events, currentEvent: $currentEvent)
                 }
             })
             .navigationTitle("Events")
             .toolbar(content: {
                 NavigationLink {
-                    NewEventView(events: $coordinator.events)
+                    NewEventView(events: $dataManager.events)
                         .navigationTitle("New event")
                         .toolbarRole(.editor)
                 } label: {

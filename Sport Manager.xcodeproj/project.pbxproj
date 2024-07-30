@@ -40,6 +40,8 @@
 		517972482C58C9E700958BC5 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517972472C58C9E600958BC5 /* ExpensesView.swift */; };
 		5179724A2C58CCD700958BC5 /* CustomSegmetedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517972492C58CCD700958BC5 /* CustomSegmetedControl.swift */; };
 		5179724D2C59104000958BC5 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5179724C2C59104000958BC5 /* OnboardView.swift */; };
+		5179724F2C5912A200958BC5 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5179724E2C5912A200958BC5 /* NewPostView.swift */; };
+		517972512C5912E300958BC5 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517972502C5912E300958BC5 /* PostModel.swift */; };
 		51AEEE3A2C5155FB00CD2C96 /* ArticleDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AEEE392C5155FB00CD2C96 /* ArticleDescription.swift */; };
 		51BEDADC2C526E4300E8D3D4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BEDADB2C526E4300E8D3D4 /* DataManager.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +100,8 @@
 		517972472C58C9E600958BC5 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		517972492C58CCD700958BC5 /* CustomSegmetedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmetedControl.swift; sourceTree = "<group>"; };
 		5179724C2C59104000958BC5 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		5179724E2C5912A200958BC5 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
+		517972502C5912E300958BC5 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		51AEEE362C511F0400CD2C96 /* Sport-Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sport-Manager-Info.plist"; sourceTree = SOURCE_ROOT; };
 		51AEEE392C5155FB00CD2C96 /* ArticleDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDescription.swift; sourceTree = "<group>"; };
 		51BEDADB2C526E4300E8D3D4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -260,10 +264,11 @@
 		517732B02C50F833006EB2F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				514F9E902C5006FD006B164A /* ArticleModel.swift */,
 				517972452C58B4C700958BC5 /* NewPurchase.swift */,
+				514F9E902C5006FD006B164A /* ArticleModel.swift */,
 				517246FD2C539B8D008EF4F6 /* EventModel.swift */,
 				5171E3762C5785DF00415FA6 /* IncomeModel.swift */,
+				517972502C5912E300958BC5 /* PostModel.swift */,
 				5171E3782C5785F300415FA6 /* ExpensModel.swift */,
 			);
 			path = Models;
@@ -273,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				5173D1702C4FDA1B005909B1 /* PostsView.swift */,
+				5179724E2C5912A200958BC5 /* NewPostView.swift */,
 			);
 			path = PostViews;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				514F9E912C5006FD006B164A /* ArticleModel.swift in Sources */,
+				517972512C5912E300958BC5 /* PostModel.swift in Sources */,
 				5171E37E2C57891900415FA6 /* IncomesView.swift in Sources */,
 				51BEDADC2C526E4300E8D3D4 /* DataManager.swift in Sources */,
 				516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */,
@@ -436,6 +443,7 @@
 				517246FE2C539B8D008EF4F6 /* EventModel.swift in Sources */,
 				5173D1712C4FDA1B005909B1 /* PostsView.swift in Sources */,
 				517247022C539D3B008EF4F6 /* EventDescription.swift in Sources */,
+				5179724F2C5912A200958BC5 /* NewPostView.swift in Sources */,
 				5171E3802C5798E900415FA6 /* PopUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

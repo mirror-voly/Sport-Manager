@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BudgetView: View {
     
-    @EnvironmentObject private var coordinator: DataManager
+    @EnvironmentObject private var dataManager: DataManager
     
     @State private var sheetIsOpened = false
     @State private var navigationAddButtonePopUP = false
@@ -27,8 +27,8 @@ struct BudgetView: View {
                         .padding(.bottom)
                     VStack(content: {
                         switch currentSegment {
-                        case .income: IncomesView(incomes: $coordinator.incomes)
-                        case .expence: ExpensesView(expenses: $coordinator.expenses)
+                        case .income: IncomesView(incomes: $dataManager.incomes)
+                        case .expence: ExpensesView(expenses: $dataManager.expenses)
                         }
                     })
                     .frame(maxHeight: .infinity)
@@ -58,7 +58,7 @@ struct BudgetView: View {
                     }, content: {
                         NavigationStack {
                             switch newPurcheaseState {
-                            case .income: NewIncomeView(incomes: $coordinator.incomes)
+                            case .income: NewIncomeView(incomes: $dataManager.incomes)
                                     .navigationTitle("New income")
                                     .toolbar(content: {
                                         ToolbarItem(placement: .topBarLeading) {
@@ -71,7 +71,7 @@ struct BudgetView: View {
                                         }
                                         }
                                     })
-                            case .expence: NewExpenseView(expenses: $coordinator.expenses)
+                            case .expence: NewExpenseView(expenses: $dataManager.expenses)
                                     .navigationTitle("New expense")
                                     .toolbar(content: {
                                         ToolbarItem(placement: .topBarLeading) {

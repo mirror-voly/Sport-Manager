@@ -18,6 +18,7 @@ final class DataManager: ObservableObject {
     @Published var events: [Event] = []
     @Published var incomes: [Income] = []
     @Published var expenses: [Expense] = []
+    @Published var posts: [Post] = []
     
     func saveSettings(first: Bool) {
         UserDefaults.standard.set(first, forKey: "notAFirstStart")
@@ -81,6 +82,19 @@ final class DataManager: ObservableObject {
         return nil
     }
     
+    func savePosts(posts: [Post]) {
+        guard let encoded = try? JSONEncoder().encode(posts) else { return }
+        UserDefaults.standard.set(encoded, forKey: "posts")
+    }
+    
+    private func loadPosts() -> [Post]? {
+        if let data = UserDefaults.standard.object(forKey: "posts") as? Data {
+            guard let loadedPosts = try? JSONDecoder().decode([Post].self, from: data) else { return nil }
+            return loadedPosts
+        }
+        return nil
+    }
+    
     private func tryToLoadData() {
         if let loadedArticles = loadArticles() {
             articles = loadedArticles
@@ -99,6 +113,10 @@ final class DataManager: ObservableObject {
         
         if let loadedExpenses = loadExpenses() {
             expenses = loadedExpenses
+        }
+        
+        if let loadedPosts = loadPosts() {
+            posts = loadedPosts
         }
     }
 }
