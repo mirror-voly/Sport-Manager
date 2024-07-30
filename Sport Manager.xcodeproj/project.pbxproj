@@ -25,7 +25,7 @@
 		5171E3772C5785DF00415FA6 /* IncomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E3762C5785DF00415FA6 /* IncomeModel.swift */; };
 		5171E3792C5785F300415FA6 /* ExpensModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E3782C5785F300415FA6 /* ExpensModel.swift */; };
 		5171E37B2C57877A00415FA6 /* IsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E37A2C57877A00415FA6 /* IsEmptyView.swift */; };
-		5171E37E2C57891900415FA6 /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E37D2C57891900415FA6 /* IncomeView.swift */; };
+		5171E37E2C57891900415FA6 /* IncomesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E37D2C57891900415FA6 /* IncomesView.swift */; };
 		5171E3802C5798E900415FA6 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E37F2C5798E900415FA6 /* PopUpView.swift */; };
 		517246FE2C539B8D008EF4F6 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517246FD2C539B8D008EF4F6 /* EventModel.swift */; };
 		517247002C539CA9008EF4F6 /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517246FF2C539CA9008EF4F6 /* NewEventView.swift */; };
@@ -38,6 +38,8 @@
 		5176E8832C4FBE4000940EA7 /* ArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176E8822C4FBE4000940EA7 /* ArticlesView.swift */; };
 		5176E8852C4FC06F00940EA7 /* TabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176E8842C4FC06F00940EA7 /* TabViewItem.swift */; };
 		517972462C58B4C700958BC5 /* NewPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517972452C58B4C700958BC5 /* NewPurchase.swift */; };
+		517972482C58C9E700958BC5 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517972472C58C9E600958BC5 /* ExpensesView.swift */; };
+		5179724A2C58CCD700958BC5 /* CustomSegmetedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517972492C58CCD700958BC5 /* CustomSegmetedControl.swift */; };
 		51AEEE3A2C5155FB00CD2C96 /* ArticleDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AEEE392C5155FB00CD2C96 /* ArticleDescription.swift */; };
 		51BEDADC2C526E4300E8D3D4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BEDADB2C526E4300E8D3D4 /* DataManager.swift */; };
 /* End PBXBuildFile section */
@@ -81,7 +83,7 @@
 		5171E3762C5785DF00415FA6 /* IncomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeModel.swift; sourceTree = "<group>"; };
 		5171E3782C5785F300415FA6 /* ExpensModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensModel.swift; sourceTree = "<group>"; };
 		5171E37A2C57877A00415FA6 /* IsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsEmptyView.swift; sourceTree = "<group>"; };
-		5171E37D2C57891900415FA6 /* IncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
+		5171E37D2C57891900415FA6 /* IncomesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomesView.swift; sourceTree = "<group>"; };
 		5171E37F2C5798E900415FA6 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		517246FD2C539B8D008EF4F6 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		517246FF2C539CA9008EF4F6 /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,8 @@
 		5176E8822C4FBE4000940EA7 /* ArticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesView.swift; sourceTree = "<group>"; };
 		5176E8842C4FC06F00940EA7 /* TabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewItem.swift; sourceTree = "<group>"; };
 		517972452C58B4C700958BC5 /* NewPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPurchase.swift; sourceTree = "<group>"; };
+		517972472C58C9E600958BC5 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
+		517972492C58CCD700958BC5 /* CustomSegmetedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmetedControl.swift; sourceTree = "<group>"; };
 		51AEEE362C511F0400CD2C96 /* Sport-Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sport-Manager-Info.plist"; sourceTree = SOURCE_ROOT; };
 		51AEEE392C5155FB00CD2C96 /* ArticleDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDescription.swift; sourceTree = "<group>"; };
 		51BEDADB2C526E4300E8D3D4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -213,7 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				5173D16E2C4FDA0A005909B1 /* BudgetView.swift */,
-				5171E37D2C57891900415FA6 /* IncomeView.swift */,
+				5171E37D2C57891900415FA6 /* IncomesView.swift */,
+				517972472C58C9E600958BC5 /* ExpensesView.swift */,
 				515621842C57C249005477BB /* NewIncomeView.swift */,
 				515621862C57C567005477BB /* NewExpenseView.swift */,
 			);
@@ -245,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				5176E8842C4FC06F00940EA7 /* TabViewItem.swift */,
+				517972492C58CCD700958BC5 /* CustomSegmetedControl.swift */,
 				5171E37F2C5798E900415FA6 /* PopUpView.swift */,
 				5171E37A2C57877A00415FA6 /* IsEmptyView.swift */,
 			);
@@ -394,7 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				514F9E912C5006FD006B164A /* ArticleModel.swift in Sources */,
-				5171E37E2C57891900415FA6 /* IncomeView.swift in Sources */,
+				5171E37E2C57891900415FA6 /* IncomesView.swift in Sources */,
 				51BEDADC2C526E4300E8D3D4 /* DataManager.swift in Sources */,
 				516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */,
 				5171E3752C57823F00415FA6 /* AllArticlesView.swift in Sources */,
@@ -410,10 +416,12 @@
 				5176E8832C4FBE4000940EA7 /* ArticlesView.swift in Sources */,
 				515621872C57C567005477BB /* NewExpenseView.swift in Sources */,
 				51599A1C2C4AB8E50052EADF /* LoadingView.swift in Sources */,
+				5179724A2C58CCD700958BC5 /* CustomSegmetedControl.swift in Sources */,
 				5173D1732C4FDA2E005909B1 /* SettingsView.swift in Sources */,
 				5173D1772C4FDB1D005909B1 /* Coordinator.swift in Sources */,
 				5168598F2C4A51E100FBB014 /* Sport_ManagerApp.swift in Sources */,
 				5176E8852C4FC06F00940EA7 /* TabViewItem.swift in Sources */,
+				517972482C58C9E700958BC5 /* ExpensesView.swift in Sources */,
 				517972462C58B4C700958BC5 /* NewPurchase.swift in Sources */,
 				517247002C539CA9008EF4F6 /* NewEventView.swift in Sources */,
 				516859C12C4AB5EC00FBB014 /* RootView.swift in Sources */,

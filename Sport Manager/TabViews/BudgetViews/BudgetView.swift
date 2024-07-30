@@ -11,10 +11,10 @@ struct BudgetView: View {
     
     @EnvironmentObject private var coordinator: Coordinator
     
-    @State var sheetIsOpened = false
-    @State var navigationAddButtonePopUP = false
-    @State var currentNewPurcheaseState: NewPurchase.NewPurchaseState?
-
+    @State private var sheetIsOpened = false
+    @State private var navigationAddButtonePopUP = false
+    @State private var newPurcheaseState: NewPurchase.purchaseState?
+    @State private var currentSegment: NewPurchase.purchaseState = .income
     
     var body: some View {
         
@@ -22,6 +22,15 @@ struct BudgetView: View {
             ZStack(content: {
                 Color(.mainBackground)
                     .ignoresSafeArea()
+                VStack {
+                    CustomSegmetedControl(currentSegment: $currentSegment)
+                    VStack(content: {
+                        switch currentSegment {
+                        case .income: IncomesView(incomes: $coordinator.incomes)
+                        case .expence: ExpensesView(expenses: $coordinator.expenses)
+                        }
+                    }).frame(maxHeight: .infinity)
+                }.padding()
             })
             .navigationTitle("Budget")
             .toolbar(content: {
@@ -33,20 +42,20 @@ struct BudgetView: View {
                             .fontWeight(.semibold)
                     })
                     .popover(isPresented: $navigationAddButtonePopUP, content: {
-                        PopUpView(newPurchaseType: $currentNewPurcheaseState, navigationAddButtonePopUP: $navigationAddButtonePopUP)
+                        PopUpView(newPurchaseType: $newPurcheaseState, navigationAddButtonePopUP: $navigationAddButtonePopUP)
                             .presentationCompactAdaptation(.popover)
                     })
-                    .onChange(of: currentNewPurcheaseState, {
-                        if currentNewPurcheaseState != nil {
+                    .onChange(of: newPurcheaseState, {
+                        if newPurcheaseState != nil {
                             sheetIsOpened = true
                         }
                     })
                     .sheet(isPresented: $sheetIsOpened, onDismiss: {
-                        currentNewPurcheaseState = nil
+                        newPurcheaseState = nil
                     }, content: {
                         NavigationStack {
-                            switch currentNewPurcheaseState {
-                            case .newIncome: NewIncomeView(incomes: $coordinator.incomes)
+                            switch newPurcheaseState {
+                            case .income: NewIncomeView(incomes: $coordinator.incomes)
                                     .navigationTitle("New income")
                                     .toolbar(content: {
                                         ToolbarItem(placement: .topBarLeading) {
@@ -59,7 +68,7 @@ struct BudgetView: View {
                                         }
                                         }
                                     })
-                            case .newExpence: NewExpenseView(expenses: $coordinator.expenses)
+                            case .expence: NewExpenseView(expenses: $coordinator.expenses)
                                     .navigationTitle("New expense")
                                     .toolbar(content: {
                                         ToolbarItem(placement: .topBarLeading) {
@@ -73,7 +82,7 @@ struct BudgetView: View {
                                         }
                                     })
                             case .none:
-                                Text("Error, \(String(describing: currentNewPurcheaseState)))")
+                                Text("Error, \(String(describing: newPurcheaseState)))")
                             }
                         }
                     })

@@ -1,5 +1,5 @@
 //
-//  IncomeView.swift
+//  IncomesView.swift
 //  Sport Manager
 //
 //  Created by mix on 29.07.2024.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct IncomeView: View {
+struct IncomesView: View {
     
-    @EnvironmentObject private var coordinator: Coordinator
+    @Binding var incomes: [Income]
     
     var body: some View {
-        if coordinator.incomes.isEmpty {
+        if incomes.isEmpty {
             IsEmptyView(currentItem: "incom")
         } else {
                   
@@ -22,5 +22,5 @@ struct IncomeView: View {
 }
 
 #Preview {
-    IncomeView()
+    IncomesView(incomes: .constant([]))
 }

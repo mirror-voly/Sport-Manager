@@ -25,6 +25,14 @@ struct RootView: View {
         if let events = dataManager.loadEvents() {
             coordinator.events = events
         }
+        
+        if let incomes = dataManager.loadIncomes() {
+            coordinator.incomes = incomes
+        }
+        
+        if let expenses = dataManager.loadExpenses() {
+            coordinator.expenses = expenses
+        }
     }
     
     init() {

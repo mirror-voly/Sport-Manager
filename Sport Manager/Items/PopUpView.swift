@@ -10,18 +10,17 @@ import SwiftUI
 struct PopUpView: View {
     
     
-    @Binding var newPurchaseType: NewPurchase.NewPurchaseState?
+    @Binding var newPurchaseType: NewPurchase.purchaseState?
     @Binding var navigationAddButtonePopUP: Bool
     
     var body: some View {
         ZStack(alignment: .leading, content: {
-            Color.cardBackGrownd
+            Color.cardBackGround
             
             VStack(alignment: .leading, content: {
                 Button(action: {
-                    newPurchaseType = .newIncome
+                    newPurchaseType = .income
                     navigationAddButtonePopUP = false
-                    print("done")
                 }, label: {
                     HStack(content: {
                         Image(systemName: "arrow.up")
@@ -41,9 +40,8 @@ struct PopUpView: View {
                 Divider().colorInvert()
                 
                 Button(action: {
-                    newPurchaseType = .newExpence
+                    newPurchaseType = .expence
                     navigationAddButtonePopUP = false
-                    print("done")
                 }, label: {
                     HStack(content: {
                         Image(systemName: "arrow.down")
