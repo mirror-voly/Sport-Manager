@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Post: Codable, Hashable {
+struct Post: Identifiable, Codable, Hashable {
     
     var id = UUID()
     

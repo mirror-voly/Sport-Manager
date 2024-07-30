@@ -85,6 +85,7 @@ final class DataManager: ObservableObject {
     func savePosts(posts: [Post]) {
         guard let encoded = try? JSONEncoder().encode(posts) else { return }
         UserDefaults.standard.set(encoded, forKey: "posts")
+        print("saved")
     }
     
     private func loadPosts() -> [Post]? {

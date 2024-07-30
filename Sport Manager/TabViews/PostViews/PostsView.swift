@@ -10,6 +10,7 @@ import SwiftUI
 struct PostsView: View {
     
     @EnvironmentObject private var dataManager: DataManager
+    @State private var currentPost: Post?
     
     var body: some View {
         
@@ -20,7 +21,7 @@ struct PostsView: View {
                 if dataManager.events.isEmpty {
                     IsEmptyView(currentItem: "post")
                 } else {
-//                    AllEventsView(events: $dataManager.events, currentEvent: $currentEvent)
+                    AllPostsView(posts: $dataManager.posts, currentPost: $currentPost)
                 }
             })
             .navigationTitle("Posts")
