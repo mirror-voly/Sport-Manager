@@ -190,10 +190,9 @@
 				51AEEE362C511F0400CD2C96 /* Sport-Manager-Info.plist */,
 				5168598E2C4A51E100FBB014 /* Sport_ManagerApp.swift */,
 				517732B02C50F833006EB2F0 /* Models */,
-				5173D1742C4FDA49005909B1 /* StartViews */,
 				516859C02C4AB5EC00FBB014 /* RootView.swift */,
+				5173D1742C4FDA49005909B1 /* StartViews */,
 				5173D1752C4FDA6A005909B1 /* TabViews */,
-				51BEDADB2C526E4300E8D3D4 /* DataManager.swift */,
 				5173D1782C4FDB27005909B1 /* Helpers */,
 				516859922C4A51E200FBB014 /* Assets.xcassets */,
 				516859942C4A51E200FBB014 /* Preview Content */,
@@ -262,6 +261,7 @@
 		5173D1782C4FDB27005909B1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				51BEDADB2C526E4300E8D3D4 /* DataManager.swift */,
 				5176E8842C4FC06F00940EA7 /* TabViewItem.swift */,
 				51713C572C592F8A008ACAAB /* ExtetionView to (hideKeyboard).swift */,
 				517972492C58CCD700958BC5 /* CustomSegmetedControl.swift */,

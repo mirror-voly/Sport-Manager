@@ -10,7 +10,7 @@ import Foundation
 final class DataManager: ObservableObject {
     
     init() {
-        tryToLoadData() 
+        tryToLoadAll() 
     }
     
     @Published var notAFirstStart: Bool = false
@@ -27,15 +27,15 @@ final class DataManager: ObservableObject {
         saveIncomes(income: [])
         saveExpenses(expenses: [])
         savePosts(posts: [])
-        tryToLoadData()
+        tryToLoadAll()
     }
     
     func saveSettings(first: Bool) {
-        UserDefaults.standard.set(first, forKey: "notAFirstStart")
+        UserDefaults.standard.set(first, forKey: "settings")
     }
     
     private func loadSettings() -> Bool? {
-        let notAFirstStart = UserDefaults.standard.bool(forKey: "notAFirstStart")
+        let notAFirstStart = UserDefaults.standard.bool(forKey: "settings")
         return notAFirstStart
     }
     
@@ -105,7 +105,7 @@ final class DataManager: ObservableObject {
         return nil
     }
     
-    private func tryToLoadData() {
+    private func tryToLoadAll() {
         if let loadedArticles = loadArticles() {
             articles = loadedArticles
         }
