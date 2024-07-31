@@ -29,8 +29,6 @@ struct NewPostView: View {
         let newPost = Post(title: title, text: text, date: Date())
         posts.append(newPost)
         dataManager.savePosts(posts: posts)
-        print(#function)
-        print(posts)
     }
     
     var body: some View {
