@@ -36,7 +36,7 @@ struct OnboardViewPresenter: View {
                             viewText = "Integrated notes to help you in the events"
                         })
                 })
-                .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                .disabled(true)
                 .padding(.top, -geometry.safeAreaInsets.top * 2)
                 .tabViewStyle(.page)
 

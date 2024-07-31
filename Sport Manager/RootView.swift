@@ -10,7 +10,7 @@ import SwiftUI
 
 struct RootView: View {
     
-    @StateObject private var dataManager = DataManager()
+    @EnvironmentObject private var dataManager: DataManager
     @State var tabViewIndex = 0
 
     init() {
@@ -28,7 +28,6 @@ struct RootView: View {
                     PostsView().tabItem { TabViewItem(tabViewImageName: "doc.richtext.fill", tabViewText: "Posts") }
                     SettingsView().tabItem { TabViewItem(tabViewImageName: "gearshape.fill", tabViewText: "Settings") }
                 })
-                .environmentObject(dataManager)
             } else {
                 OnboardViewPresenter(notAFirstStart: $dataManager.notAFirstStart)
             }

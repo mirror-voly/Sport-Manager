@@ -11,7 +11,8 @@ import SwiftUI
 struct Sport_ManagerApp: App {
     
     @State var isLoading = false
-
+    @StateObject private var dataManager = DataManager()
+        
     
     func startLoadingScreen() {
         isLoading = true
@@ -29,6 +30,7 @@ struct Sport_ManagerApp: App {
                     RootView()
                 }
             })
+            .environmentObject(dataManager)
             .preferredColorScheme(.dark)
             .onAppear(perform: {
                 startLoadingScreen()

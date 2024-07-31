@@ -45,6 +45,8 @@
 		5179724D2C59104000958BC5 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5179724C2C59104000958BC5 /* OnboardView.swift */; };
 		5179724F2C5912A200958BC5 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5179724E2C5912A200958BC5 /* NewPostView.swift */; };
 		517972512C5912E300958BC5 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517972502C5912E300958BC5 /* PostModel.swift */; };
+		517B6A5E2C5A25E500F31CD1 /* CustomResetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B6A5D2C5A25E500F31CD1 /* CustomResetAlert.swift */; };
+		517B6A602C5A30D100F31CD1 /* CustomRateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B6A5F2C5A30D100F31CD1 /* CustomRateAlert.swift */; };
 		51AEEE3A2C5155FB00CD2C96 /* ArticleDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AEEE392C5155FB00CD2C96 /* ArticleDescription.swift */; };
 		51BEDADC2C526E4300E8D3D4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BEDADB2C526E4300E8D3D4 /* DataManager.swift */; };
 /* End PBXBuildFile section */
@@ -108,6 +110,8 @@
 		5179724C2C59104000958BC5 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		5179724E2C5912A200958BC5 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		517972502C5912E300958BC5 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		517B6A5D2C5A25E500F31CD1 /* CustomResetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomResetAlert.swift; sourceTree = "<group>"; };
+		517B6A5F2C5A30D100F31CD1 /* CustomRateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRateAlert.swift; sourceTree = "<group>"; };
 		51AEEE362C511F0400CD2C96 /* Sport-Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sport-Manager-Info.plist"; sourceTree = SOURCE_ROOT; };
 		51AEEE392C5155FB00CD2C96 /* ArticleDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDescription.swift; sourceTree = "<group>"; };
 		51BEDADB2C526E4300E8D3D4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 				5171E37F2C5798E900415FA6 /* PopUpView.swift */,
 				5171E37A2C57877A00415FA6 /* IsEmptyView.swift */,
 				5179724C2C59104000958BC5 /* OnboardView.swift */,
+				517B6A5D2C5A25E500F31CD1 /* CustomResetAlert.swift */,
+				517B6A5F2C5A30D100F31CD1 /* CustomRateAlert.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				517B6A602C5A30D100F31CD1 /* CustomRateAlert.swift in Sources */,
 				514F9E912C5006FD006B164A /* ArticleModel.swift in Sources */,
 				517972512C5912E300958BC5 /* PostModel.swift in Sources */,
 				5171E37E2C57891900415FA6 /* IncomesView.swift in Sources */,
@@ -449,6 +456,7 @@
 				5176E8852C4FC06F00940EA7 /* TabViewItem.swift in Sources */,
 				517972482C58C9E700958BC5 /* ExpensesView.swift in Sources */,
 				517972462C58B4C700958BC5 /* NewPurchase.swift in Sources */,
+				517B6A5E2C5A25E500F31CD1 /* CustomResetAlert.swift in Sources */,
 				517247002C539CA9008EF4F6 /* NewEventView.swift in Sources */,
 				516859C12C4AB5EC00FBB014 /* RootView.swift in Sources */,
 				517246FE2C539B8D008EF4F6 /* EventModel.swift in Sources */,
