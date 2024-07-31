@@ -18,7 +18,7 @@ struct PostsView: View {
             ZStack(content: {
                 Color(.mainBackground)
                     .ignoresSafeArea()
-                if dataManager.events.isEmpty {
+                if dataManager.posts.isEmpty {
                     IsEmptyView(currentItem: "post")
                 } else {
                     AllPostsView(posts: $dataManager.posts, currentPost: $currentPost)

@@ -9,7 +9,7 @@ import Foundation
 
 struct NewPurchase {
     
-    enum purchaseState: String, CaseIterable {
+    enum PurchaseState: String, CaseIterable {
         case income = "Income"
         case expence = "Expence"
     }

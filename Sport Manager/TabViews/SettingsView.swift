@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
-//    @EnvironmentObject private var dataManager: DataManager
+
     @State private var resetAletr = false
     @State private var rateAletr = false
     

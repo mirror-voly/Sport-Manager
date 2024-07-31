@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PopUpView: View {
     
-    @Binding var newPurchaseType: NewPurchase.purchaseState?
+    @Binding var newPurchaseType: NewPurchase.PurchaseState?
     @Binding var navigationAddButtonePopUP: Bool
     
     var body: some View {

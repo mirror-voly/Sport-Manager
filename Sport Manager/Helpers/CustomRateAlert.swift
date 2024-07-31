@@ -11,9 +11,8 @@ struct CustomRateAlert: View {
     
     @Binding var rateAlert: Bool
     @EnvironmentObject private var dataManager: DataManager
-    
-    var starsCount = 5
-    var currentRate: Int?
+
+    @State private var currentRate: Int?
     
     var body: some View {
         
@@ -39,6 +38,7 @@ struct CustomRateAlert: View {
             HStack(alignment: .center, spacing: 20, content: {
                 ForEach(0..<5) { item in
                     Button {
+                        currentRate = item
                         rateAlert = false
                     } label: {
                         Image(systemName: "star")
@@ -62,7 +62,6 @@ struct CustomRateAlert: View {
                         .frame(height: 44)
                 }
                 .tint(.settingsRed)
-            
         })
         .background(.settingrsAlertBackground)
         .frame(width: 270)

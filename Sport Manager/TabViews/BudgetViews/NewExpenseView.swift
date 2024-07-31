@@ -10,15 +10,16 @@ import SwiftUI
 struct NewExpenseView: View {
     
     @EnvironmentObject private var dataManager: DataManager
+    
     @Binding var expenses: [Expense]
-    @State var allSet = false
-    @State var title = ""
-    @State var date = ""
-    @State var sum = ""
+    @State private var allSet = false
+    @State private var title = ""
+    @State private var date = ""
+    @State private var sum = ""
 
     @Environment(\.dismiss) var dismis
       
-    func isAllFieldsSet() {
+    private func isAllFieldsSet() {
         if  !title.isEmpty && !date.isEmpty && !sum.isEmpty {
             allSet = true
         } else {

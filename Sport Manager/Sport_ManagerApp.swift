@@ -10,11 +10,10 @@ import SwiftUI
 @main
 struct Sport_ManagerApp: App {
     
-    @State var isLoading = false
+    @State private var isLoading = false
     @StateObject private var dataManager = DataManager()
         
-    
-    func startLoadingScreen() {
+    private func startLoadingScreen() {
         isLoading = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             isLoading = false

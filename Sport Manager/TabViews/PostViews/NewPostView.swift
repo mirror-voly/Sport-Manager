@@ -11,13 +11,13 @@ struct NewPostView: View {
     
     @Binding var posts: [Post]
     @EnvironmentObject private var dataManager: DataManager
-    @State var allSet = false
-    @State var title = ""
-    @State var text = ""
+    @State private var allSet = false
+    @State private var title = ""
+    @State private var text = ""
 
-    @Environment(\.dismiss) var dismis
+    @Environment(\.dismiss) private var dismis
       
-    func isAllFieldsSet() {
+    private func isAllFieldsSet() {
         if  !title.isEmpty && !text.isEmpty {
             allSet = true
         } else {
@@ -29,6 +29,8 @@ struct NewPostView: View {
         let newPost = Post(title: title, text: text, date: Date())
         posts.append(newPost)
         dataManager.savePosts(posts: posts)
+        print(#function)
+        print(posts)
     }
     
     var body: some View {

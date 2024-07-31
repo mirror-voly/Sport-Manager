@@ -10,15 +10,15 @@ import SwiftUI
 struct NewArticle: View {
 
     @Binding var articles: [Article]
-    @State var title = ""
-    @State var articleText = ""
-    @State var publisher = ""
-    @State var correntSportType: Int?
-    @State var correntStatus: Int?
-    @State var allSet = false
+    @State private var title = ""
+    @State private var articleText = ""
+    @State private var publisher = ""
+    @State private var correntSportType: Int?
+    @State private var correntStatus: Int?
+    @State private var allSet = false
 
     @EnvironmentObject private var dataManager: DataManager
-    @Environment(\.dismiss) var dismis
+    @Environment(\.dismiss) private var dismis
     
     private let allSportTypes = Article.SportType.allCases
     private let allStatus = Article.Status.allCases

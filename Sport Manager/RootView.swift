@@ -11,7 +11,7 @@ import SwiftUI
 struct RootView: View {
     
     @EnvironmentObject private var dataManager: DataManager
-    @State var tabViewIndex = 0
+    @State private var tabViewIndex = 0
 
     init() {
         UITabBar.appearance().backgroundColor = UIColor(.buttonColorActive.opacity(0.2))

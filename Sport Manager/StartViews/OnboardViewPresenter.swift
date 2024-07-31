@@ -9,9 +9,9 @@ import SwiftUI
 
 struct OnboardViewPresenter: View {
     
-    @State var viewTitle = ""
-    @State var viewText = ""
-    @State var currentView = 0
+    @State private var viewTitle = ""
+    @State private var viewText = ""
+    @State private var currentView = 0
     @Binding var notAFirstStart: Bool
     @EnvironmentObject private var dataManager: DataManager
     

@@ -13,8 +13,8 @@ struct BudgetView: View {
     
     @State private var sheetIsOpened = false
     @State private var navigationAddButtonePopUP = false
-    @State private var newPurcheaseState: NewPurchase.purchaseState?
-    @State private var currentSegment: NewPurchase.purchaseState = .income
+    @State private var newPurcheaseState: NewPurchase.PurchaseState?
+    @State private var currentSegment: NewPurchase.PurchaseState = .income
     
     var body: some View {
         

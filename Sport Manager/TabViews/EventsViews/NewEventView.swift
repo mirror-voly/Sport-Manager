@@ -10,14 +10,14 @@ import SwiftUI
 struct NewEventView: View {
 
     @Binding var events: [Event]
-    @State var correntSportType: Int?
-    @State var allSet = false
-    @State var subtitle = ""
-    @State var teamOneName = ""
-    @State var teamTwoName = ""
-    @State var teamOneScore = ""
-    @State var teamTwoScore = ""
-    @State var date = ""
+    @State private var correntSportType: Int?
+    @State private var allSet = false
+    @State private var subtitle = ""
+    @State private var teamOneName = ""
+    @State private var teamTwoName = ""
+    @State private var teamOneScore = ""
+    @State private var teamTwoScore = ""
+    @State private var date = ""
     private let allSportTypes = Event.SportType.allCases
  
     @EnvironmentObject private var dataManager: DataManager

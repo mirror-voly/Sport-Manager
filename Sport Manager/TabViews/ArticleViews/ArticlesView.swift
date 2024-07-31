@@ -10,7 +10,7 @@ import SwiftUI
 struct ArticlesView: View {
     
     @EnvironmentObject private var dataManager: DataManager
-    @State var currentArticle: Article?
+    @State private var currentArticle: Article?
     
     var body: some View {
         

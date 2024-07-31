@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CustomSegmetedControl: View {
     
-    @Binding var currentSegment: NewPurchase.purchaseState
-    private let allCases = NewPurchase.purchaseState.allCases
+    @Binding var currentSegment: NewPurchase.PurchaseState
+    private let allCases = NewPurchase.PurchaseState.allCases
     
     var body: some View {
         HStack(spacing: 0, content: {

@@ -10,7 +10,7 @@ import SwiftUI
 struct EventsView: View {
     
     @EnvironmentObject private var dataManager: DataManager
-    @State var currentEvent: Event?
+    @State private var currentEvent: Event?
     
     var body: some View {
         
