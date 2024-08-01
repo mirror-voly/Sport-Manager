@@ -9,9 +9,7 @@ import SwiftUI
 
 struct NewExpenseView: View {
     
-    @EnvironmentObject private var dataManager: DataManager
-    
-    @Binding var expenses: [Expense]
+    @Environment(DataManager.self) private var dataManager
     @State private var allSet = false
     @State private var title = ""
     @State private var date = ""
@@ -29,8 +27,8 @@ struct NewExpenseView: View {
     
     private func addNew() {
         let newExpense = Expense(title: title, date: date, sum: sum)
-        expenses.append(newExpense)
-        dataManager.saveExpenses(expenses: expenses)
+        dataManager.expenses.append(newExpense)
+        dataManager.saveExpenses()
     }
     
 var body: some View {

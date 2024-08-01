@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EventsView: View {
     
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(DataManager.self) private var dataManager
     @State private var currentEvent: Event?
     
     var body: some View {
@@ -21,13 +21,13 @@ struct EventsView: View {
                 if dataManager.events.isEmpty {
                     IsEmptyView(currentItem: "event")
                 } else {
-                    AllEventsView(events: $dataManager.events, currentEvent: $currentEvent)
+                    AllEventsView(currentEvent: $currentEvent)
                 }
             })
             .navigationTitle("Events")
             .toolbar(content: {
                 NavigationLink {
-                    NewEventView(events: $dataManager.events)
+                    NewEventView()
                         .navigationTitle("New event")
                         .toolbarRole(.editor)
                 } label: {
@@ -39,6 +39,6 @@ struct EventsView: View {
     }
 }
 
-#Preview {
-    EventsView()
-}
+//#Preview {
+//    EventsView()
+//}

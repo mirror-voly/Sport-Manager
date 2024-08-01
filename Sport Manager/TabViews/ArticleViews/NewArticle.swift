@@ -9,7 +9,6 @@ import SwiftUI
 
 struct NewArticle: View {
 
-    @Binding var articles: [Article]
     @State private var title = ""
     @State private var articleText = ""
     @State private var publisher = ""
@@ -17,7 +16,7 @@ struct NewArticle: View {
     @State private var correntStatus: Int?
     @State private var allSet = false
 
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(DataManager.self) private var dataManager
     @Environment(\.dismiss) private var dismis
     
     private let allSportTypes = Article.SportType.allCases
@@ -25,8 +24,8 @@ struct NewArticle: View {
     
     private func addNew() {
         let newArticle = Article(title: title, sportType: allSportTypes[correntSportType!], text: articleText, publisher: publisher, status: allStatus[correntStatus!])
-        articles.append(newArticle)
-        dataManager.saveArticles(articles: articles)
+        dataManager.articles.append(newArticle)
+        dataManager.saveArticles()
     }
     
     private func isAllFieldsSet() {

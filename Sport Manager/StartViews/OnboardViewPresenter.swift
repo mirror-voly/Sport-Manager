@@ -9,11 +9,12 @@ import SwiftUI
 
 struct OnboardViewPresenter: View {
     
+    @Environment(DataManager.self) private var dataManager
+    
     @State private var viewTitle = ""
     @State private var viewText = ""
     @State private var currentView = 0
-    @Binding var notAFirstStart: Bool
-    @EnvironmentObject private var dataManager: DataManager
+    
     
     var body: some View {
         GeometryReader(content: { geometry in
@@ -51,8 +52,8 @@ struct OnboardViewPresenter: View {
                         if currentView < 2 {
                             currentView += 1
                         } else {
-                            dataManager.saveSettings(first: true)
-                            notAFirstStart = true
+                            dataManager.notAFirstStart = true
+                            dataManager.saveSettings()
                         }
                     }, label: {
                         Text("Next")
@@ -72,6 +73,6 @@ struct OnboardViewPresenter: View {
 }
 
 
-#Preview {
-    OnboardViewPresenter(notAFirstStart: .constant(true))
-}
+//#Preview {
+//    OnboardViewPresenter(notAFirstStart: .constant(true))
+//}

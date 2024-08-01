@@ -9,15 +9,13 @@ import SwiftUI
 
 struct AllEventsView: View {
     
-    @Binding var events: [Event]
+    @Environment(DataManager.self) private var dataManager
     @Binding var currentEvent: Event?
     
-    @EnvironmentObject private var dataManager: DataManager
-    
     private func removeCurrentEventElement() {
-        if let index = events.firstIndex(of: currentEvent!) {
-            events.remove(at: index)
-            dataManager.saveEvents(events: events)
+        if let index = dataManager.events.firstIndex(of: currentEvent!) {
+            dataManager.events.remove(at: index)
+            dataManager.saveEvents()
         }
     }
     
@@ -25,10 +23,9 @@ struct AllEventsView: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading, spacing: 8, content: {
-                ForEach(events) { event in
-                    
+                
+                ForEach(dataManager.events) { event in
                     let teamNames = "\(event.teamOneName) VS \(event.teamTwoName)"
-                    
                     HStack(content: {
                         VStack(alignment: .leading, spacing: 4, content: {
                             HStack {

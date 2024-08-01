@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomResetAlert: View {
     
     @Binding var resetAlert: Bool
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(DataManager.self) private var dataManager
     
     var body: some View {
         

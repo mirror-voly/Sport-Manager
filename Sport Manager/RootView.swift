@@ -10,33 +10,34 @@ import SwiftUI
 
 struct RootView: View {
     
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(DataManager.self) private var dataManager
     @State private var tabViewIndex = 0
-
+    
     init() {
         UITabBar.appearance().backgroundColor = UIColor(.buttonColorActive.opacity(0.2))
        }
     
     var body: some View {
+        
         ZStack(content: {
             if dataManager.notAFirstStart == true {
                 TabView(selection: $tabViewIndex,
                         content: {
                     ArticlesView().tabItem { TabViewItem(tabViewImageName: "doc.fill", tabViewText: "Articles") }
-                    EventsView().tabItem { TabViewItem(tabViewImageName: "trophy.fill", tabViewText: " Events") }
+                    EventsView().tabItem { TabViewItem(tabViewImageName: "trophy.fill", tabViewText: "Events") }
                     BudgetView().tabItem { TabViewItem(tabViewImageName: "dollarsign.circle.fill", tabViewText: "Budget") }
                     PostsView().tabItem { TabViewItem(tabViewImageName: "doc.richtext.fill", tabViewText: "Posts") }
                     SettingsView().tabItem { TabViewItem(tabViewImageName: "gearshape.fill", tabViewText: "Settings") }
                 })
             } else {
-                OnboardViewPresenter(notAFirstStart: $dataManager.notAFirstStart)
+                OnboardViewPresenter()
             }
         })
         
     }
     
 }
-
-#Preview {
-    RootView()
-}
+//
+//#Preview {
+//    RootView()
+//}

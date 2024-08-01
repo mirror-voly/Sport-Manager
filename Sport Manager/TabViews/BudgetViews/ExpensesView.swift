@@ -9,29 +9,27 @@ import SwiftUI
 
 struct ExpensesView: View {
     
+    @Environment(DataManager.self) private var dataManager
     
-    @EnvironmentObject private var dataManager: DataManager
-    
-    @Binding var expenses: [Expense]
     private let grid = [
         GridItem(.adaptive(minimum: 170))
     ]
     
     private func removeThis(expense: Expense) {
-        if let index = expenses.firstIndex(of: expense) {
-            expenses.remove(at: index)
-            dataManager.saveExpenses(expenses: expenses)
+        if let index = dataManager.expenses.firstIndex(of: expense) {
+            dataManager.expenses.remove(at: index)
+            dataManager.saveExpenses()
         }
     }
 
     var body: some View {      
         
-        if expenses.isEmpty {
+        if dataManager.expenses.isEmpty {
             IsEmptyView(currentItem: "expense")
         } else {
             ScrollView(.vertical) {
                 LazyVGrid(columns: grid, spacing: 8,  content: {
-                    ForEach(expenses, id: \.self) { item in
+                    ForEach(dataManager.expenses, id: \.self) { item in
                         VStack(alignment: .leading, spacing: 10, content: {
                             VStack(alignment: .leading, spacing: 8, content: {
                                 HStack(content: {

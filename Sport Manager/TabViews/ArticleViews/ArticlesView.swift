@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ArticlesView: View {
     
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(DataManager.self) private var dataManager
     @State private var currentArticle: Article?
     
     var body: some View {
-        
+
         NavigationStack {
             ZStack(content: {
                 Color(.mainBackground)
@@ -21,13 +21,13 @@ struct ArticlesView: View {
                 if dataManager.articles.isEmpty{
                     IsEmptyView(currentItem: "article")
                 } else {
-                    AllArticlesView(articles: $dataManager.articles, currentArticle: $currentArticle)
+                    AllArticlesView(currentArticle: $currentArticle)
                 }
             })
             .navigationTitle("Articles")
             .toolbar(content: {
                 NavigationLink {
-                    NewArticle(articles: $dataManager.articles)
+                    NewArticle()
                         .navigationTitle("New article")
                         .toolbarRole(.editor)
                 } label: {
@@ -39,6 +39,6 @@ struct ArticlesView: View {
     }
 }
 
-#Preview {
-    ArticlesView()
-}
+//#Preview {
+//    ArticlesView()
+//}

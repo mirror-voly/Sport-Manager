@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct NewIncomeView: View {
-    
-        @EnvironmentObject private var dataManager: DataManager
-        @Binding var incomes: [Income]
-        @State private var allSet = false
-        @State private var title = ""
-        @State private var date = ""
-        @State private var sum = ""
 
-        @Environment(\.dismiss) private var dismis
+    @Environment(DataManager.self) private var dataManager
+    @State private var allSet = false
+    @State private var title = ""
+    @State private var date = ""
+    @State private var sum = ""
+
+    @Environment(\.dismiss) private var dismis
           
     private func isAllFieldsSet() {
             if  !title.isEmpty && !date.isEmpty && !sum.isEmpty {
@@ -26,10 +25,10 @@ struct NewIncomeView: View {
             }
         }
         
-        private func addNew() {
+    private func addNew() {
             let newIncome = Income(title: title, date: date, sum: sum)
-            incomes.append(newIncome)
-            dataManager.saveIncomes(income: incomes)
+            dataManager.incomes.append(newIncome)
+            dataManager.saveIncomes()
         }
         
     var body: some View {

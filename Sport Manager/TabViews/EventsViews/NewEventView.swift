@@ -9,7 +9,6 @@ import SwiftUI
 
 struct NewEventView: View {
 
-    @Binding var events: [Event]
     @State private var correntSportType: Int?
     @State private var allSet = false
     @State private var subtitle = ""
@@ -20,7 +19,7 @@ struct NewEventView: View {
     @State private var date = ""
     private let allSportTypes = Event.SportType.allCases
  
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(DataManager.self) private var dataManager
     @Environment(\.dismiss) var dismis
       
     func isAllFieldsSet() {
@@ -33,8 +32,8 @@ struct NewEventView: View {
     
     private func addNew() {
         let newEvent = Event(sportType: allSportTypes[correntSportType!], subtitle: subtitle, teamOneName: teamOneName, teamTwoName: teamTwoName, teamOneScore: teamOneScore, teamTwoScore: teamTwoScore, date: date)
-        events.append(newEvent)
-        dataManager.saveEvents(events: events)
+        dataManager.events.append(newEvent)
+        dataManager.saveEvents()
     }
     
     var body: some View {

@@ -7,31 +7,22 @@
 
 import Foundation
 
-final class DataManager: ObservableObject {
+@Observable
+final class DataManager {
     
     init() {
         tryToLoadAll() 
     }
     
-    @Published var notAFirstStart: Bool = false
-    @Published var articles: [Article] = []
-    @Published var events: [Event] = []
-    @Published var incomes: [Income] = []
-    @Published var expenses: [Expense] = []
-    @Published var posts: [Post] = []
+    var notAFirstStart: Bool = false
+    var articles: [Article] = []
+    var events: [Event] = []
+    var incomes: [Income] = []
+    var expenses: [Expense] = []
+    var posts: [Post] = []
     
-    func resetAll() {
-        saveSettings(first: false)
-        saveArticles(articles: [])
-        saveEvents(events: [])
-        saveIncomes(income: [])
-        saveExpenses(expenses: [])
-        savePosts(posts: [])
-        tryToLoadAll()
-    }
-    
-    func saveSettings(first: Bool) {
-        UserDefaults.standard.set(first, forKey: "settings")
+    func saveSettings() {
+        UserDefaults.standard.set(notAFirstStart, forKey: "settings")
     }
     
     private func loadSettings() -> Bool? {
@@ -39,7 +30,7 @@ final class DataManager: ObservableObject {
         return notAFirstStart
     }
     
-    func saveArticles(articles: [Article]) {
+    func saveArticles() {
         guard let encoded = try? JSONEncoder().encode(articles) else { return }
         UserDefaults.standard.set(encoded, forKey: "articles")
     }
@@ -53,7 +44,7 @@ final class DataManager: ObservableObject {
         return nil
     }
     
-    func saveEvents(events: [Event]) {
+    func saveEvents() {
         guard let encoded = try? JSONEncoder().encode(events) else { return }
         UserDefaults.standard.set(encoded, forKey: "events")
     }
@@ -66,8 +57,8 @@ final class DataManager: ObservableObject {
         return nil
     }
     
-    func saveIncomes(income: [Income]) {
-        guard let encoded = try? JSONEncoder().encode(income) else { return }
+    func saveIncomes() {
+        guard let encoded = try? JSONEncoder().encode(incomes) else { return }
         UserDefaults.standard.set(encoded, forKey: "incomes")
     }
     
@@ -79,7 +70,7 @@ final class DataManager: ObservableObject {
         return nil
     }
     
-    func saveExpenses(expenses: [Expense]) {
+    func saveExpenses() {
         guard let encoded = try? JSONEncoder().encode(expenses) else { return }
         UserDefaults.standard.set(encoded, forKey: "expenses")
     }
@@ -92,7 +83,7 @@ final class DataManager: ObservableObject {
         return nil
     }
     
-    func savePosts(posts: [Post]) {
+    func savePosts() {
         guard let encoded = try? JSONEncoder().encode(posts) else { return }
         UserDefaults.standard.set(encoded, forKey: "posts")
     }
@@ -106,27 +97,30 @@ final class DataManager: ObservableObject {
     }
     
     private func tryToLoadAll() {
-        if let loadedArticles = loadArticles() {
-            articles = loadedArticles
-        }
-        if let loadedsettings = loadSettings() {
-            notAFirstStart = loadedsettings
-        }
-        
-        if let loadedEvents = loadEvents() {
-            events = loadedEvents
-        }
-        
-        if let loadedIncomes = loadIncomes() {
-            incomes = loadedIncomes
-        }
-        
-        if let loadedExpenses = loadExpenses() {
-            expenses = loadedExpenses
-        }
-        
-        if let loadedPosts = loadPosts() {
-            posts = loadedPosts
-        }
+        articles = loadArticles() ?? []
+        events = loadEvents() ?? []
+        incomes = loadIncomes() ?? []
+        expenses = loadExpenses() ?? []
+        posts = loadPosts() ?? []
+        notAFirstStart = loadSettings() ?? false
+    }
+    
+    private func saveAll() {
+        saveSettings()
+        saveArticles()
+        saveEvents()
+        saveIncomes()
+        saveExpenses()
+        savePosts()
+    }
+    
+    func resetAll() {
+        notAFirstStart = false
+        articles = []
+        events = []
+        incomes = []
+        expenses = []
+        posts = []
+        saveAll()
     }
 }

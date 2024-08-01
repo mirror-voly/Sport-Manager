@@ -9,8 +9,7 @@ import SwiftUI
 
 struct NewPostView: View {
     
-    @Binding var posts: [Post]
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(DataManager.self) private var dataManager
     @State private var allSet = false
     @State private var title = ""
     @State private var text = ""
@@ -27,8 +26,8 @@ struct NewPostView: View {
     
     private func addNew() {
         let newPost = Post(title: title, text: text, date: Date())
-        posts.append(newPost)
-        dataManager.savePosts(posts: posts)
+        dataManager.posts.append(newPost)
+        dataManager.savePosts()
     }
     
     var body: some View {
@@ -108,6 +107,6 @@ struct NewPostView: View {
     }
 }
 
-#Preview {
-    NewPostView(posts: .constant([]))
-}
+//#Preview {
+//    NewPostView(posts: .constant([]))
+//}

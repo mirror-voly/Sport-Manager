@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PostsView: View {
     
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(DataManager.self) private var dataManager
     @State private var currentPost: Post?
     
     var body: some View {
@@ -21,13 +21,13 @@ struct PostsView: View {
                 if dataManager.posts.isEmpty {
                     IsEmptyView(currentItem: "post")
                 } else {
-                    AllPostsView(posts: $dataManager.posts, currentPost: $currentPost)
+                    AllPostsView(currentPost: $currentPost)
                 }
             })
             .navigationTitle("Posts")
             .toolbar(content: {
                 NavigationLink {
-                    NewPostView(posts: $dataManager.posts)
+                    NewPostView()
                         .navigationTitle("New post")
                         .toolbarRole(.editor)
                 } label: {
@@ -39,6 +39,6 @@ struct PostsView: View {
     }
 }
 
-#Preview {
-    PostsView()
-}
+//#Preview {
+//    PostsView()
+//}

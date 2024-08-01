@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AllPostsView: View {
     
-    @Binding var posts: [Post]
+    @Environment(DataManager.self) private var dataManager
     @Binding var currentPost: Post?
     
     private func formatDate(date: Date) -> String {
@@ -22,7 +22,7 @@ struct AllPostsView: View {
         
         ScrollView(.vertical) {
             VStack(alignment: .leading, spacing: 12, content: {
-                ForEach(posts, id: \.self) { post in
+                ForEach(dataManager.posts, id: \.self) { post in
                         VStack(alignment: .leading, content: {
                             VStack(alignment: .leading, spacing: 4, content: {
                                 let formatedDate = formatDate(date: post.date)
@@ -58,6 +58,6 @@ struct AllPostsView: View {
     }
 }
 
-#Preview {
-    AllPostsView(posts: .constant([]), currentPost: .constant(Post(title: "sdfsd", text: "sddsf", date: Date())))
-}
+//#Preview {
+//    AllPostsView(posts: .constant([]), currentPost: .constant(Post(title: "sdfsd", text: "sddsf", date: Date())))
+//}

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BudgetView: View {
     
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(DataManager.self) private var dataManager
     
     @State private var sheetIsOpened = false
     @State private var navigationAddButtonePopUP = false
@@ -27,8 +27,8 @@ struct BudgetView: View {
                         .padding(.bottom)
                     VStack(content: {
                         switch currentSegment {
-                        case .income: IncomesView(incomes: $dataManager.incomes)
-                        case .expence: ExpensesView(expenses: $dataManager.expenses)
+                        case .income: IncomesView()
+                        case .expence: ExpensesView()
                         }
                     })
                     .frame(maxHeight: .infinity)
@@ -58,7 +58,7 @@ struct BudgetView: View {
                     }, content: {
                         NavigationStack {
                             switch newPurcheaseState {
-                            case .income: NewIncomeView(incomes: $dataManager.incomes)
+                            case .income: NewIncomeView()
                                     .navigationTitle("New income")
                                     .toolbar(content: {
                                         ToolbarItem(placement: .topBarLeading) {
@@ -71,7 +71,7 @@ struct BudgetView: View {
                                         }
                                         }
                                     })
-                            case .expence: NewExpenseView(expenses: $dataManager.expenses)
+                            case .expence: NewExpenseView()
                                     .navigationTitle("New expense")
                                     .toolbar(content: {
                                         ToolbarItem(placement: .topBarLeading) {
@@ -95,7 +95,7 @@ struct BudgetView: View {
         }
     }
 }
-
-#Preview {
-    BudgetView()
-}
+//
+//#Preview {
+//    BudgetView()
+//}

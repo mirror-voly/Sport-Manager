@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomRateAlert: View {
     
     @Binding var rateAlert: Bool
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(DataManager.self) private var dataManager
 
     @State private var currentRate: Int?
     

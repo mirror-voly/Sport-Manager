@@ -11,7 +11,7 @@ import SwiftUI
 struct Sport_ManagerApp: App {
     
     @State private var isLoading = false
-    @StateObject private var dataManager = DataManager()
+    @State private var dataManager = DataManager()
         
     private func startLoadingScreen() {
         isLoading = true
@@ -22,14 +22,14 @@ struct Sport_ManagerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ZStack(content: {
+            Group {
                 if isLoading {
                     LoadingView()
                 } else {
                     RootView()
                 }
-            })
-            .environmentObject(dataManager)
+            }
+            .environment(dataManager)
             .preferredColorScheme(.dark)
             .onAppear(perform: {
                 startLoadingScreen()

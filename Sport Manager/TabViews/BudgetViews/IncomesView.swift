@@ -9,29 +9,27 @@ import SwiftUI
 
 struct IncomesView: View {
     
-    @Binding var incomes: [Income]
-    
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(DataManager.self) private var dataManager
     
     private let grid = [
         GridItem(.adaptive(minimum: 170))
     ]
     
     private func removeThis(income: Income) {
-        if let index = incomes.firstIndex(of: income) {
-            incomes.remove(at: index)
-            dataManager.saveIncomes(income: incomes)
+        if let index = dataManager.incomes.firstIndex(of: income) {
+            dataManager.incomes.remove(at: index)
+            dataManager.saveIncomes()
         }
     }
     
     var body: some View {
 
-        if incomes.isEmpty {
+        if dataManager.incomes.isEmpty {
             IsEmptyView(currentItem: "incom")
         } else {
             ScrollView(.vertical) {
                 LazyVGrid(columns: grid, spacing: 8,  content: {
-                    ForEach(incomes, id: \.self) { item in
+                    ForEach(dataManager.incomes, id: \.self) { item in
                         VStack(alignment: .leading, spacing: 10, content: {
                             VStack(alignment: .leading, spacing: 8, content: {
                                 HStack(content: {
@@ -74,6 +72,6 @@ struct IncomesView: View {
     }
 }
 
-#Preview {
-    IncomesView(incomes: .constant([]))
-}
+//#Preview {
+//    IncomesView(incomes: .constant([]))
+//}

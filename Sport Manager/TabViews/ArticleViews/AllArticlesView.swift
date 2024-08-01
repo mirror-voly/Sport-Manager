@@ -9,14 +9,14 @@ import SwiftUI
 
 struct AllArticlesView: View {
     
-    @Binding var articles: [Article]
+    @Environment(DataManager.self) private var dataManager
     @Binding var currentArticle: Article?
     
     var body: some View {
         
         ScrollView(.vertical) {
             VStack(alignment: .leading, spacing: 8, content: {
-                ForEach(articles) { article in
+                ForEach(dataManager.articles) { article in
                     HStack(content: {
                         VStack(alignment: .leading, spacing: 4, content: {
                             VStack {
