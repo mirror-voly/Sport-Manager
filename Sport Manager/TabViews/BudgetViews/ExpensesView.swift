@@ -16,10 +16,7 @@ struct ExpensesView: View {
     ]
     
     private func removeThis(expense: Expense) {
-        if let index = dataManager.expenses.firstIndex(of: expense) {
-            dataManager.expenses.remove(at: index)
-            dataManager.saveExpenses()
-        }
+        dataManager.removeItem(expense)
     }
 
     var body: some View {      

@@ -52,8 +52,7 @@ struct OnboardViewPresenter: View {
                         if currentView < 2 {
                             currentView += 1
                         } else {
-                            dataManager.notAFirstStart = true
-                            dataManager.saveSettings()
+                            dataManager.tugglenotAFirstStart()
                         }
                     }, label: {
                         Text("Next")

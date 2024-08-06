@@ -32,8 +32,7 @@ struct NewEventView: View {
     
     private func addNew() {
         let newEvent = Event(sportType: allSportTypes[correntSportType!], subtitle: subtitle, teamOneName: teamOneName, teamTwoName: teamTwoName, teamOneScore: teamOneScore, teamTwoScore: teamTwoScore, date: date)
-        dataManager.events.append(newEvent)
-        dataManager.saveEvents()
+        dataManager.appendItem(newEvent)
     }
     
     var body: some View {

@@ -27,8 +27,7 @@ struct NewIncomeView: View {
         
     private func addNew() {
             let newIncome = Income(title: title, date: date, sum: sum)
-            dataManager.incomes.append(newIncome)
-            dataManager.saveIncomes()
+            dataManager.appendItem(newIncome)
         }
         
     var body: some View {

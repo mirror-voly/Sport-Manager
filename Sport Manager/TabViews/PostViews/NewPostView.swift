@@ -26,8 +26,7 @@ struct NewPostView: View {
     
     private func addNew() {
         let newPost = Post(title: title, text: text, date: Date())
-        dataManager.posts.append(newPost)
-        dataManager.savePosts()
+        dataManager.appendItem(newPost)
     }
     
     var body: some View {

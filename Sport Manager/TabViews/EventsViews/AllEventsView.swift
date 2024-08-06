@@ -13,9 +13,8 @@ struct AllEventsView: View {
     @Binding var currentEvent: Event?
     
     private func removeCurrentEventElement() {
-        if let index = dataManager.events.firstIndex(of: currentEvent!) {
-            dataManager.events.remove(at: index)
-            dataManager.saveEvents()
+        if let currentEvent = currentEvent {
+            dataManager.removeItem(currentEvent)
         }
     }
     

@@ -24,8 +24,7 @@ struct NewArticle: View {
     
     private func addNew() {
         let newArticle = Article(title: title, sportType: allSportTypes[correntSportType!], text: articleText, publisher: publisher, status: allStatus[correntStatus!])
-        dataManager.articles.append(newArticle)
-        dataManager.saveArticles()
+        dataManager.appendItem(newArticle)
     }
     
     private func isAllFieldsSet() {
