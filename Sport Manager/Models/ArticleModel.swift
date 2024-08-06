@@ -7,9 +7,7 @@
 
 import Foundation
 
-struct Article: Identifiable, Codable, Equatable {
-    
-    var id = UUID()
+struct Article: Codable, Equatable {
     
     enum SportType: CaseIterable, Codable {
         case basketball, football, volleyball, hockey, box, golf, other
@@ -47,4 +45,14 @@ struct Article: Identifiable, Codable, Equatable {
     let text: String
     let publisher: String
     let status: Status
+}
+
+extension Article: Identifiable {
+    
+    var id: UUID {
+        UUID()
+        
+    }
+    
+    
 }

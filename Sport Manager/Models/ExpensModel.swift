@@ -9,9 +9,16 @@ import Foundation
 
 struct Expense: Codable, Hashable  {
     
-    var id = UUID()
-    
     let title: String
     let date: String
     let sum: String
+    
+}
+
+extension Expense: Identifiable {
+    
+    var id: UUID {
+        UUID()
+    }
+    
 }

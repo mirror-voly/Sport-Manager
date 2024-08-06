@@ -7,12 +7,19 @@
 
 import Foundation
 
-struct Post: Identifiable, Codable, Hashable {
-    
-    var id = UUID()
+struct Post: Codable, Hashable {
     
     let title: String
     let text: String
     let date: Date
+    
+}
+
+extension Post: Identifiable {
+    
+    var id: UUID {
+        UUID()
+    }
+    
 }
 

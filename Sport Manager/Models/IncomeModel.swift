@@ -9,9 +9,16 @@ import Foundation
 
 struct Income: Codable, Hashable {
     
-    var id = UUID()
-    
     let title: String
     let date: String
     let sum: String
+    
+}
+
+extension Income: Identifiable {
+    
+    var id: UUID {
+        UUID()
+    }
+    
 }
