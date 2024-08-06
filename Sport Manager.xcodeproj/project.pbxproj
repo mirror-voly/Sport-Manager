@@ -20,7 +20,7 @@
 		516859AC2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859AB2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift */; };
 		516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859BA2C4A551D00FBB014 /* OnboardViewPresenter.swift */; };
 		516859C12C4AB5EC00FBB014 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516859C02C4AB5EC00FBB014 /* RootView.swift */; };
-		51713C582C592F8A008ACAAB /* ExtetionView to (hideKeyboard).swift in Sources */ = {isa = PBXBuildFile; fileRef = 51713C572C592F8A008ACAAB /* ExtetionView to (hideKeyboard).swift */; };
+		51713C582C592F8A008ACAAB /* View + Extetion (hideKeyboard).swift in Sources */ = {isa = PBXBuildFile; fileRef = 51713C572C592F8A008ACAAB /* View + Extetion (hideKeyboard).swift */; };
 		51713C5A2C593C1D008ACAAB /* AllPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51713C592C593C1D008ACAAB /* AllPostsView.swift */; };
 		51713C5C2C594C17008ACAAB /* PostDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51713C5B2C594C17008ACAAB /* PostDescription.swift */; };
 		5171E3732C5775FC00415FA6 /* AllEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E3722C5775FC00415FA6 /* AllEventsView.swift */; };
@@ -85,7 +85,7 @@
 		516859AB2C4A51E300FBB014 /* Sport_ManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport_ManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		516859BA2C4A551D00FBB014 /* OnboardViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewPresenter.swift; sourceTree = "<group>"; };
 		516859C02C4AB5EC00FBB014 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		51713C572C592F8A008ACAAB /* ExtetionView to (hideKeyboard).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExtetionView to (hideKeyboard).swift"; sourceTree = "<group>"; };
+		51713C572C592F8A008ACAAB /* View + Extetion (hideKeyboard).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Extetion (hideKeyboard).swift"; sourceTree = "<group>"; };
 		51713C592C593C1D008ACAAB /* AllPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPostsView.swift; sourceTree = "<group>"; };
 		51713C5B2C594C17008ACAAB /* PostDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDescription.swift; sourceTree = "<group>"; };
 		5171E3722C5775FC00415FA6 /* AllEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsView.swift; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 			children = (
 				51BEDADB2C526E4300E8D3D4 /* DataManager.swift */,
 				5176E8842C4FC06F00940EA7 /* TabViewItem.swift */,
-				51713C572C592F8A008ACAAB /* ExtetionView to (hideKeyboard).swift */,
+				51713C572C592F8A008ACAAB /* View + Extetion (hideKeyboard).swift */,
 				517972492C58CCD700958BC5 /* CustomSegmetedControl.swift */,
 				5171E37F2C5798E900415FA6 /* PopUpView.swift */,
 				5171E37A2C57877A00415FA6 /* IsEmptyView.swift */,
@@ -432,7 +432,7 @@
 				514F9E912C5006FD006B164A /* ArticleModel.swift in Sources */,
 				517972512C5912E300958BC5 /* PostModel.swift in Sources */,
 				5171E37E2C57891900415FA6 /* IncomesView.swift in Sources */,
-				51713C582C592F8A008ACAAB /* ExtetionView to (hideKeyboard).swift in Sources */,
+				51713C582C592F8A008ACAAB /* View + Extetion (hideKeyboard).swift in Sources */,
 				51BEDADC2C526E4300E8D3D4 /* DataManager.swift in Sources */,
 				516859BB2C4A551D00FBB014 /* OnboardViewPresenter.swift in Sources */,
 				5171E3752C57823F00415FA6 /* AllArticlesView.swift in Sources */,
